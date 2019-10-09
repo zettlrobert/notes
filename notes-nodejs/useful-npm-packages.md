@@ -12,3 +12,9 @@ Validation
 
 Visuals
 * chalk - customize text
+
+
+### Commandline Argument Parsing
+parse process.argv
+
+* yargs -- argv command line parser

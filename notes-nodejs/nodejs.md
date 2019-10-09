@@ -54,3 +54,20 @@ Initialize Project
 A Node package which is available System wide.
 
     $ npm install module -g
+
+
+### Filesystem
+Storing Data to the System
+
+
+
+
+### Commandline Arguments
+Arguments are under process.argv
+2 Strings are always provided
+* path to the node executable on the machine
+* path to file on machine
+* provided Arguments
+
+provvide additional options
+* --command="value"
