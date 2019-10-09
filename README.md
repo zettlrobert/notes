@@ -1,7 +1,10 @@
 # Just my Notes on different Technologys in Development
 
 ## Nodejs
-* Item 1
+* Notes on Node
+* Useful NPM Packages
+* Notes App in Nodejs - Basic Concepts
+
 
 ## Linux
 * Linux Introduction
