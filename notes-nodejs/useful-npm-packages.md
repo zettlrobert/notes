@@ -18,3 +18,12 @@ Visuals
 parse process.argv
 
 * yargs -- argv command line parser
+
+
+### HTTP Requests
+* request
+* axios
+
+
+### Chrome Extensions
+* JSON Formatter

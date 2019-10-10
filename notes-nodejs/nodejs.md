@@ -9,6 +9,9 @@ Node does not know how to run JS Code, it passes code to the V8 which returns th
 
 ### [Node Documentation](https://nodejs.org/dist/latest-v12.x/docs/api/)
 
+* non blocking
+* asynchronous
+* event driven
 
 Start Node in Console (Read Eval Print Loop)
 
@@ -87,3 +90,10 @@ provvide additional options
    *
 
 ### Error Messages in Nodejs
+* below error message there is a stacktrace
+* points to problem
+
+
+### Making HTTP Requests
+##### With NPM Packages
+* request
