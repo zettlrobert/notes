@@ -71,3 +71,19 @@ Arguments are under process.argv
 
 provvide additional options
 * --command="value"
+
+
+
+## Node Debugging
+* console.log() -- most basic tool
+* debugger - node debugger
+* chrome://inspect/#devices'
+ * node inspect -- if debugger needs to be used
+ * chrome://inspect/#devices
+   * node inspect app.js
+   * console
+   * sources -- function wraps code to run it
+   * add project to developer tools
+   *
+
+### Error Messages in Nodejs
