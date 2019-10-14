@@ -83,7 +83,7 @@ provvide additional options
 * chrome://inspect/#devices'
  * node inspect -- if debugger needs to be used
  * chrome://inspect/#devices
-   * node inspect app.js
+   * **node inspect app.js**
    * console
    * sources -- function wraps code to run it
    * add project to developer tools
