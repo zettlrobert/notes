@@ -1,0 +1,43 @@
+body {
+  color: rgb(33, 33, 33);
+  font-family: arial;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+footer {
+  color: rgb(8, 8, 8);
+  border-top: 1px solid rgb(181, 181, 181);
+  margin-top: 3rem;
+  padding: 1rem;
+}
+
+header {
+  margin: 2rem 0rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+header a {
+  color: rgb(79, 79, 79);
+  text-decoration: none;
+}
+
+.profilepicture {
+  max-width: 50%;
+}
+
+.main-content {
+
+}

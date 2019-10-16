@@ -97,3 +97,24 @@ provvide additional options
 ### Making HTTP Requests
 ##### With NPM Packages
 * request
+
+
+##Webserver
+* [express](http://expressjs.com/) library
+
+### Core Node Modules
+* path
+  * path.join()
+
+
+### Template Engine for Dynamic Websites
+* handlebars - hbs
+
+#### Customize hbs
+Tell Express where the views are located.
+* create constant
+* app.set dirname, path
+
+##### hbs Partials
+* partials Path
+* partials registerPartials
