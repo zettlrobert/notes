@@ -8,16 +8,17 @@ const location = process.argv[2];
 if (!location) {
   console.log(`Provide a location.`);
 } else {
-  geocode(location, (error, data) => {
+  //Second Argument, destructured data Object
+  geocode(location, (error, {latitude, longtitude, location}) => {
     if (error) {
       return console.log(error);
     }
 
-    forecast(data.latitude, data.longtitude, (error, forecastData) => {
+    forecast(latitude, longtitude, (error, forecastData) => {
       if (error) {
         return console.log(error);
       }
-      console.log(data.location);
+      console.log(location);
       console.log(forecastData);
     })
   })
