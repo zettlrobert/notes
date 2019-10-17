@@ -41,3 +41,15 @@ header a {
 .main-content {
 
 }
+
+input {
+  border: 1px solid rgb(223, 223, 223);
+  padding: .5rem;
+}
+
+button {
+ cursor: pointer;
+ border: 1px solid rgb(223, 223, 223);
+ background: rgb(223, 223, 223);
+ padding: .5rem;
+}

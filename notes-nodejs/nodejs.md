@@ -118,3 +118,6 @@ Tell Express where the views are located.
 ##### hbs Partials
 * partials Path
 * partials registerPartials
+
+### 404
+* wildcard get on fileend

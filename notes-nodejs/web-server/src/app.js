@@ -2,6 +2,10 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
+//My Files
+const geocode = require('./utils/geocode');
+const forecast = require('./utils/forecast');
+
 console.log(__filename);
 console.log(__dirname);
 
@@ -45,10 +49,54 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+  if (!req.query.address) {
+    return res.send({
+      error: 'You must provide a location!'
+    })
+  }
+
+//callback with default parameters for destructu4red object
+  geocode(req.query.address, (error, {
+    latitude,
+    longtitude,
+    location
+  } = {}) => {
+    if (error) {
+      return res.send({
+        error
+      })
+    }
+
+    forecast(latitude, longtitude, (error, forecastData) => {
+      if (error) {
+        return res.send({
+          error
+        })
+      }
+
+      res.send({
+        forecast: forecastData,
+        location,
+        address: req.query.address
+      })
+    })
+  })
+})
+
+
+app.get('/products', (req, res) => {
+  if (!req.query.search) {
+    return res.send({
+      error: 'You must provide a search term'
+    })
+  }
+
+  console.log(req.query);
   res.send({
-    forecast: 50,
-    location: 'Hausham'
-  });
+    products: [
+
+    ]
+  })
 })
 
 
