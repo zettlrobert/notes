@@ -121,3 +121,10 @@ Tell Express where the views are located.
 
 ### 404
 * wildcard get on fileend
+
+
+
+## Application Deploying
+* git
+* github
+* heroku(production server)
