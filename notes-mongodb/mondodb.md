@@ -96,3 +96,55 @@ GUID can be generated before they are inserted in the DB.
 4-byte Unix epoch
 5-byte randomvalue
 3-byte counter, starting with a random value
+
+
+## basic commands
+* insertOne
+* insertMany
+* findOne
+* find --> gibes back "curosr" on which methods can be called
+ * toArray()
+* updateMany
+* updateOne
+
+
+## mongodb update operators
+* $currentDate
+* $incmin
+* $max
+* $mulrename
+* $set
+* $setOninsert
+* $unsert
+
+
+## Updating Documents
+
+Update with Promises
+* updateOne
+* updateMany
+
+
+## Delete Documents
+* deleteOne
+* deleteMany
+
+Filter, target promise instad of target
+provide provide search criteria
+
+
+
+
+## REST API
+Representational State Transfer - Application Programming Interface (REST API or RESTful API)
+
+
+
+
+# ODM
+Object Document Mapper
+
+## Mongoose
+Datamodelling System
+
+## NPM Validator
