@@ -138,6 +138,12 @@ provide provide search criteria
 ## REST API
 Representational State Transfer - Application Programming Interface (REST API or RESTful API)
 
+Represntational: Representation of Data, CRUD Operations
+
+State Transfer: Each client request, contains everything needed so the server can process the request
+
+
+
 
 
 
@@ -148,3 +154,37 @@ Object Document Mapper
 Datamodelling System
 
 ## NPM Validator
+
+
+## [Postman](https://www.getpostman.com/)
+
+1. Environment to provide url for all requests
+1. Auth in Collection Edit Authorization Bearer Token...
+1. in tests tab get use script to get tokens if auth is needed
+
+# Authentication and Security
+
+## Storing Passwords
+Passwords need to be hashed
+
+## Becrypt Algorythm to hash
+
+byryptjs npm module
+
+1. save encrypted password to database
+2. on login get string and encrypt
+3. if encryption matches login
+
+
+## Middleware
+Middleware pre and post hooks are functions which are passed control during execution of asynchronous functions.
+
+
+## Authentication with [JWT](https://www.npmjs.com/package/jsonwebtoken)
+JSON Web Token for Authentication
+
+jwt is split in three parts
+
+1. JWT and which Algorythmen
+1. Payload and Body
+1.
