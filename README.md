@@ -1,18 +1,4 @@
-# Just my Notes on different Technologys in Development
+# Notes
 
-## Nodejs
-* Notes on Node
-* Useful NPM Packages
-* Notes App in Nodejs - Basic Concepts
+## My Notes and learning process regarding Development with different Technologies.
 
-
-## Linux
-* Linux Introduction
-* scripts
-  * here i will publish my personal scripts
-
-## git
-* item 1
-
-## React
-* item 1
