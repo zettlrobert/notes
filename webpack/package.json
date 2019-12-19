@@ -1,0 +1,19 @@
+{
+	"name": "webpack",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "webpack-dev-server --config webpack.dev.js --open",
+		"build": "webpack --config webpack.build.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"css-loader": "^3.4.0",
+		"style-loader": "^1.0.2",
+		"webpack-dev-server": "^3.10.0",
+		"webpack-merge": "^4.2.2"
+	}
+}
