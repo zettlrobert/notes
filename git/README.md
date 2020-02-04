@@ -1,47 +1,58 @@
-# Notes on Git
-
+# Git
 Version Control with Git
 
 
-## 1. Untracked Files
-1. all files are untracked
+
+## Initialize Git Repository
+
+    $ git init
+
+
+## Get information about included files
+What has changes since last commit
+
+    $ git status
+
+
+## Untracked files
+All files are untracked, to stage them use:
 
     $ git add filename
 
-moves files to "3. Staged Changes"
+To get More information about what has changed 
 
-1. New files are untracked
+    $ git add -p
 
+## Staged changes
+Staged files need to be commited with a message
 
-## 2. Unstaged Changes
-Changes on tracked files are under "2. Unstaged Changes"
-Move your files to Staged changes:
-
-    $ git add filename
+    $ git commit -m "commit message"
 
 
-## 3. Staged Changes
-1. staged files need to be commited
-
-
-
-## 4. Commits
+## Commits
 Every commit has a unique identifier
 
-    $ git commit -m "Commit Message"
 
-
-
-### Git commands 
-* git init
-* git status
-
-
-
-## How to
+## Basic workflow
 1. git init
 1. create .gitignore
 1. git add . 
 1. git commit -m "Commit Message"
 1. git remote add origin git@github.com...
 1. git push -u origin master
+
+
+
+## Additional Commands
+* git branch -a
+  * lists out all branches
+* git checkout branchname
+  * create or switch to an available branch 
+* git stash
+  * save changes that should not be commited immideately
+* git merge
+  * switch to branch you want to merge into, git merge branchnametomerge
+* git reset
+  * resets to the latest comit you want tow ork with git reset mode commit
+* git remote
+  * check what remotes you have or add a new one      
