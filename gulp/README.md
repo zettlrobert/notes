@@ -64,124 +64,60 @@ Example:: Task defines as 'message'
 * !!Chain Sources in Array ['src/*.html', 'src/*.css'],
   * BASE tells Gulp from where to start copying added to 
 
-`gulp.src(['xx/*/*', 'yy/**/*'], {base: 'base'})
-  {
-    base: 'src'
-  }`
+        `gulp.src(['xx/*/*', 'yy/**/*'], {base: 'base'})
+          {
+            base: 'src'
+          }`
     
 * gulp.src("src/*html"); //Path and select Files
 * Run Task with gulp Taskname
 
 
 ### Optimize Images
-  PACKAGE gulp-imagemin
+PACKAGE gulp-imagemin
+* install with dev dependencie
+    
+    $ npm install --save-dev gulp-imagemin
 
-  - install with dev dependencie
-  --> npm install --save-dev gulp-imagemin
-
-  - require imagemin
-  --> const imagemin = require('gulp-imagemin');
-
-  //Look up how TO imagemin @git
-
+* require imagemin
+  
+      const imagemin = require('gulp-imagemin');
 
 
-//Minifiy JS
-  - get PACKAGE
-  npm install --save-dev gulp-uglify
-  - require uglify
-  //uglify requires 'readable-stream'
-  --> npm install --save-dev readable-stream
+### Minifiy JS
+PACKAGE gulp-uglify
+
+    $ npm install --save-dev gulp-uglify
+
+* require uglify
+  * uglify requires 'readable-stream'
+
+    $ npm install --save-dev readable-stream
 
 
-//Run all tasks with one Command
-  - array with task
-  --> gulp.task('default', ['task1', 'task2', 'task3']);
+### Run all tasks with one Command
+* array with task
+ 
+      gulp.task('default', ['task1', 'task2', 'task3']);
 
 
-//Watch files
- - To run Automatically
- - create task
+### Watch files
+* To run Automatically
+* create task
   location to watch, name of task.
 
-  gulp.task('watch', function(){
-    gulp.watch('src/*.html, ['copyHtml']);
-    gulp.watch('src/js/*.js', ['task']);
-    gulp.watch('src/', ['task']);
-  })
+      `gulp.task('watch', function(){
+        gulp.watch('src/*.html, ['copyHtml']);
+        gulp.watch('src/js/*.js', ['task']);
+        gulp.watch('src/', ['task']);
+      })`
 
 
 
-
-
-
-
-
-//WORKFOLW
+### WORKFOLW
 
 Development Folder (html, js, css)
-  --> Gulp Watcher
-    --> Distribution Folder(js, css, html)
-      --> Webserver(nginx, apache, node.js)
-        --> www.example.com
-
-
-// Setup Website
-  - create Digital Ocean Droplet
-    - create Webserver
-
-  - ssh into Droplet(ssh root@ip)
-
-  - change password for root
-
-  - update Package manager
-    - apt-get update
-    - apt-get install ngnix
-
-  - turn on ngnix Server
-      service nginx reload
-      service nginx restart
-
-  // Setup Folder Structure
-    - Dev folder
-      --> mkdir public(projectname)
-        --> cd public
-    - distribution folder
-      --> mkdir dist
-
-  // Create Index to Dist
-    - move ngnix Index
-      --> mv /var/www/html/index.nginx-debian.html /public/dist
-    - move to dist
-      --> cd /public/dist
-    - rename
-      --> mv index.nginx-debian.html index.html
-
-      PAGE is Gone
-
-  //Configure nginx
-  - move to
-    --> cd /etc/nginx/sites-enabled/
-  - server setup
-    --> vim default
-      - point to public/dist/
-        --> root /public/dist/
-  --> service nginx reload
-  --> service nginx restart
-
-  //In Dist Create
-  --> mkdir css
-  --> mkdir js
-
-  //In Public
-  --> mkdir css
-  --> mkdir js
-
-  //Install Gulp
-  --> install node
-  --> install gulp
-
-  //Create gulpfile
-   --> gulpfile.js
-
-
+1. Gulp Watcher
+1. Distribution Folder(js, css, html)
+1. Webserver(nginx, apache, node.js)
+1. www.example.com
