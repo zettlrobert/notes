@@ -27,3 +27,6 @@ Each file is named in the subdirectories is names "README" so it gets displayed 
 [vim](./vim)
 
 [webpack](./webpack)
+
+
+TODO: Refactoring all old .txt as .md and add/delete where necessary
