@@ -128,3 +128,13 @@ create file named Dockerfile
 ## Push image to Dockerhub
 
     $ docker push imagename
+
+
+
+### Example with Dockercompose
+Look at Dockerfile in this directory
+Dockerfile should be in root
+create docker-compose.yml file
+
+    $ docker-compose up
+

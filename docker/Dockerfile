@@ -1,5 +1,13 @@
-FROM ngnix:latest
+FROM node:10
 
-WORKDIR /user/share/nginx/html
+WORKDIR /usr/src/app
 
-COPY ..
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
