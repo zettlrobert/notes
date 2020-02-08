@@ -139,7 +139,8 @@ Programming Framework for the Dart programming language, widgets are build
 * @required to make named arguments required (flutter specific)
 * constructor doesnt have to be written completely, in dart arguments can be passed with this.argument keyword
 * Dart can use Arrow Shorthand for exaclty one Expression!(arrow function)
-
+* Dart has lists created with []
+* 
 
 ## Building Flutter App from Scratch
 Even the Page is a Widget Scaffold
@@ -163,3 +164,47 @@ Even the Page is a Widget Scaffold
 ### Building Widget Tree
 * Scaffold --> basic design and Structure for Application
 * MaterialApp Widget uses Scaffold Widget uses appBar Widget which takes a Text Widget
+* Always add comma after 
+* flutter format path - formats code
+  
+
+## Different Types of Widgets
+* Vislible Widdgets 
+  * Output & Input
+  * Raised Button, Text, Card
+  * **Draw onto the screen**
+* Invisible Widgets
+  * Layout & Controll
+  * Row(),. COlumn(), ListView()
+  * **Give App Structure and controll**
+
+
+### Connect Buttons and Functions
+* All Data Widget uses should belong into the class so that it is a Standalone Widget
+* onPressed wants to execute a function, pointer has to be passed --> function without ()
+* Pass name of cuntion to button not result of function execution
+* if you need a function in only one place, you can use a annonymous function
+* () => {} // one line expression
+* () {} // For longer function body
+
+### Updating Widget Data, understanding State
+* items from Lists(arraylike) are accessed with . (object methods) or []
+* **Whats State**: State is Data Information used by the App
+  * App State: Authenticated User, lOaded Job...
+  * Widget State: Which Question is sleected is a loading spinner displayed
+
+Stateless
+* Data can change externally
+* Getrs rerendererd when Input Data changes
+
+Stateful
+* Data can change
+* Widget has internal State
+* Updates Userinterface by internal State change or external Data change
+
+### State
+* State is a generic class form Flutter
+* State is persistend and attached to widget --> element in user Interface
+* class that extends state needs to be conected to Widget class
+* < WidgetName > <- add Pionter to Class
+* setState usually takes annonouymus function and takes the expressions which change the state
