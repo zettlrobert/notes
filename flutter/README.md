@@ -44,7 +44,7 @@ Flutter versions change frequently! But it is very stable!
 * Niché features
 * Implement things in a diffrent way
 
-## Installation
+## [Installation](https://flutter.dev/docs/get-started/install/linux)
 
 * get source code from flutter repo update with git pull - maybe create an alias? (update flutter)
 
@@ -75,3 +75,91 @@ Apple-styled (Cupertino) Widgets are also offered
 | Does NOT compile to iOS / Android UI Components | Does compile to iOS/Android UI Components | Does NOT compile to iOS / Android UI Components |
 | Cross-platform (mobile apps, web apps, desktop apps) | Mostly mobile apps(+ React Native Web) | Cross-platform (mobiel apps, web apps, desktop apps) |
 | Google | Facebook | Ionic |
+
+
+# Flutter and Dart Basics
+Basics of Flutter and Dart with flutter_quizz_app
+
+* create flutter app with:
+
+      $ flutter create app_name
+
+## Files and Folder Overview
+
+* .idea
+  * configuration for android studio
+* android
+  * hold complete android project, code gets injected into this folder (mostly passive folder)
+* build
+  * holds output of flutter application, generated and managed by flutter sdk
+* ios
+  * hold complete iOS projects, code gets injected into this folder (mostly passive folder)
+* **lib**
+  * lib for library is the folder where the dart files have to added, this is the folder to work in!
+* test 
+  * automated test 
+* .gitignore
+* .metadate
+  * managed by flutter
+* .packages
+  * internal dependencies  
+* appname.iml
+  * internal dependencies
+* pubspec.lock
+  * generated from .yaml with more information 
+* pubspec.yaml
+  * third party packages
+
+### How does a Flutter Application work
+Programming Framework for the Dart programming language, widgets are build
+
+## Dart Fundamentals
+* everything in Dart has a type
+* main is the entry point for every dart program
+* after each expression add ' ; '
+* String with "Quotes" either double or single
+* Integers, floats/doubles
+* add type to each function
+* var keyword for variable 
+* type inference --> determines type from assigned values
+* use type if value is not assigned immidiately
+* everything in Dart is an Object(Datastructure with different Metadata)
+* OOP
+* class keyword for object Functionname should be capitalized
+* variables in class are called properties
+* initiate class, call class like function --> Functionname() 
+#### Part 2
+* Dart classes need constructors (methods)
+* constructor executes only once, when class instance is initiated
+* written exactly like class
+* Person(String inputName, int inputAge)
+* Dart supports scopping
+* this refers to class level variable without scoped (for example to constructor input)
+* **named Arguments** {wrap in curlys} target by creating Data exmp: inputName: 'Name' great for functions which take a lot of arguments
+* @required to make named arguments required (flutter specific)
+* constructor doesnt have to be written completely, in dart arguments can be passed with this.argument keyword
+* Dart can use Arrow Shorthand for exaclty one Expression!(arrow function)
+
+
+## Building Flutter App from Scratch
+Even the Page is a Widget Scaffold
+
+* create class NamethisApp
+* import dependencie package:flutter/material.dart
+* NamethisApp extends StatelessWidget
+* create build method with context --> context holds metainformation about widget
+* BuildContext is a specail Object Type
+* build Method nees to return Widget <-- Add Type
+* add home Argument to MaterialApp
+* Add Text Widget()
+
+* runApp() needs to be implemented in main
+* the build Method is called
+* each class needs a build Method!
+* in Eample: Materal app uses named Arguemtn which is named home and there is a text widget which is a dart class with hello argument
+* @override decorator makes it clear that we override build Method GOOD PRACTICE if a method which exists in class we extend add override
+
+
+### Building Widget Tree
+* Scaffold --> basic design and Structure for Application
+* MaterialApp Widget uses Scaffold Widget uses appBar Widget which takes a Text Widget
