@@ -140,7 +140,19 @@ Programming Framework for the Dart programming language, widgets are build
 * constructor doesnt have to be written completely, in dart arguments can be passed with this.argument keyword
 * Dart can use Arrow Shorthand for exaclty one Expression!(arrow function)
 * Dart has lists created with []
-* 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Building Flutter App from Scratch
 Even the Page is a Widget Scaffold
@@ -208,3 +220,33 @@ Stateful
 * class that extends state needs to be conected to Widget class
 * < WidgetName > <- add Pionter to Class
 * setState usually takes annonouymus function and takes the expressions which change the state
+
+### Private Properties
+* _ Syntax for private methods and props declared with underscore cant be used outside of the class where they are declared
+
+
+### Creating custom Widget
+* create "st" provides codesnipped
+* only if constructor argument is wrapped in curlys it is a  named argument if not it is a positioned Argument
+* add final to tell Dart a value won't change after initialisation
+
+### Styling basics
+* use named Arguemtns like style Arguemnt
+* named Arguments takes a Object based on the class which is provided my material dart
+* container widget is used to style
+* container core is always the child
+
+### Passing Callback Functions
+* Lifting the State up, State is Managed on shared, common denomninator the direct Parent of the Widgets
+
+### Maps
+* Built in Datastructure
+* crated with {} or Map
+* key and value pairs
+
+### final vs const
+* final if a vlaue doenst change from the point of time when a program runs, can be initated with a value
+* final is a runtime constant value
+* const is compiletime constant --> also means runtime constant
+* const can be added infront of the variable or infront of the value
+
