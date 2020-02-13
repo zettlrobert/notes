@@ -278,3 +278,39 @@ Running on real iOS Device
 * Ctrl + Shift + P --> Dart Dev Tools
 
 
+## Most Important Widgets
+
+#### App / Page Setup
+| Android | iOS |
+|---------|------|
+ Material App | Cupertino App
+
+#### Layout
+* Container
+* Row
+  * flexible, expanded
+* Column
+  * flexible, expanded
+
+#### Content Containers
+* Stack
+* Card
+
+#### Repeat Elements
+* ListView
+* GridView
+* ListTile
+
+#### Content Types
+* Text
+* Image
+* Icon
+  
+#### User Input
+* TextField
+* RaisedButton / FlatButton
+* GestureDetector
+* InkWell
+
+
+
