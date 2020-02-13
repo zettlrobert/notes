@@ -250,3 +250,31 @@ Stateful
 * const is compiletime constant --> also means runtime constant
 * const can be added infront of the variable or infront of the value
 
+
+## Running Apps on Different Devices & Debugging Apps
+**Android**
+* turn on developer mode
+* turn on USB debugging
+* choose device you want to run app on
+* ALWAYS test on real Devices!
+
+**iOS**
+* need MacOS --> look for workarround
+* Xcode
+* in Project ./iOS/Runner...
+* Left Bar Root Element -> Signing & Capabilites
+* Need Apple Developer Account (developer.apple.com --> account)
+* open -a Simulator.app
+Running on real iOS Device
+* trust connected device
+* use xCode or VSCode to launch app on real device
+
+### Using Debugger
+* Quick and dirty: print()
+* Run App start with Debugging
+* Add break Points
+
+### Dart Dev Tools
+* Ctrl + Shift + P --> Dart Dev Tools
+
+
