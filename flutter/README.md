@@ -313,4 +313,13 @@ Running on real iOS Device
 * InkWell
 
 
+### Container vs Column / Row
+**Combine them!**
+
+| Container | Column / Row |
+|-----------|--------------|
+| Takes exactly one child widget | Takes multiple child widgets|
+| Rich alignment & styling options | Alignment but no styling options |
+| Flexible with (e.g. child width, available width) | always takes full available height or width |
+| **Perfect for fcuston styling & alignment** | **Must-use if widgets sit next to / above each other** |
 
