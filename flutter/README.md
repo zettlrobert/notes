@@ -375,3 +375,57 @@ create new folder in root assets/fonts
 * .then can be used on future 
 * code execution will not stop
 
+## Responsive & Adaptive UIs
+* One Codebase
+* One Widget Tree
+* Different Leaves if Platform.isIOS
+* Andriod Sub-Tree
+* iOS Sub-Tree
+
+### Calculating Sizes Dynamically
+* MediaQuery.of(context)
+* size Propertie
+* access to height and width
+* asign height with multiply between 0 and 1
+* substract appbar, statusbar
+
+### Constraints
+* Widget rendered on screen
+* set by assigning height or width value
+* each widget has default constraints
+* disallow landscape mode -->
+  * import flutter/services.dart
+  * SystemChrome
+  * setPrferredOrientations([DeviceOrientation.portraitUp])
+
+### Adjust to Landscape Mode
+* Switch element
+* toggle Elements on off  
+* only display switch in landscape mode
+* MediaQuery orientation boolean
+* multiple conditional with ? and if without curlys
+  
+### MediaQuery Object Management
+* set to final var in built method to avoid multiple object instances
+
+### Adaptive UserInterface
+* adaptive constructor
+* not render if on iOS
+* import dart:io
+* Platform.isOS
+* safe widgets in variables.
+* don't mix material and cupertino
+
+### Safe Area iOS
+* reserved space for appdrawer and topicons
+* wrap with SafeArea Widget
+* use MaterialApp...
+
+### Adaptive Widgets
+* AdaptiveFlatButton
+* import material and cupertino
+* stateless class
+* import dart:io for Platform check
+* add propertys and constructor for values to button
+* create instance for button when needed
+
