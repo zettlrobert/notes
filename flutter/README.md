@@ -323,3 +323,55 @@ Running on real iOS Device
 | Flexible with (e.g. child width, available width) | always takes full available height or width |
 | **Perfect for fcuston styling & alignment** | **Must-use if widgets sit next to / above each other** |
 
+
+### String interpolation
+* $ tells dart that you want to interpolate some value
+* '${variable.field}'
+* \ escape charachter in stirng interpolation
+
+### Format Date with extra Package
+
+### ListView
+* ListView(children:[])
+  * Renders everything, even whats not visible 
+* ListView.builder()
+  * Only load whats visible! 
+* **ListView.builder** requires itemBuilder --> takes function that gives us a context and number of type int, with index.
+
+
+### Configuring and using Theme
+* In App class theme argument can be setup
+* global Application wide theme --> combination of styles
+* theme: ThemeData() Object <-- provided by flutter
+* primarySwatch: based on one single Color!
+
+### Custom Font
+create new folder in root assets/fonts
+* pubspec.yaml
+* define family
+* define additional information like fontweight
+* add defeault ThemeData object for expamle for appBarTheme
+
+### Images
+* need to be included in pubspecs.yaml
+
+
+### Where
+* where  default method for function for every item in a list if true is returned item is kept in a new list, otherwise it is not included in the newly returned list.
+
+### Flexible & Expanded
+* each column in a row is as big as it needs to be or as big as you tell it to be
+* Flexible Widget with fit property
+* fit takes a flexfit configuration
+* Exbanded Widget
+* expanded only knows flex configurations
+
+### Futures
+* showDatePicker returns a Future
+* Future is a Class built into Dart
+* Classes that allow to create Objects which will give a Value in the Future (for http requests for example)
+* immidiately returns future but no value for said future
+* future triggers once value is returned
+* .then can be used on future 
+* code execution will not stop
+
