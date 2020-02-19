@@ -24,13 +24,14 @@ List available Interfaces
 | etc/          |configuration files, always backup before changeing                                                                    |
 | home/         |home directory for the user names after username                                                                       |
 | lib/          |C programming library files needed by commands and apps                                                                |
-| media/        |                                                                                                                       |
-| mnt/          |                                                                                                                       |
+| media/        |cd and disc mounts                                                                                                     |
+| mnt/          |mount external filesystems                                                                                             |
 | opt/          |optional add-on applications (Not part of the OS)                                                                      |
-| root/         |root user home directory.It is not same as /                                                                           |
+| root/         |root user home directory not the same as /                                                                             |
 | run/          |System daemons that start very early (e.g. systemd and udev) store temporary runtime files like PID files              |
-| sbin/         |                                                                                                                       |
+| sbin/         |System, filesystem commands                                                                                            |
 | svr/          |                                                                                                                       |
+| proc/         |running processes, only exists in memory                                                                               |
 | tmp/          |directory for temporary files                                                                                          |
 | usr/          |                                                                                                                       |
 | var/          |system and application log                                                                                             |
@@ -45,18 +46,6 @@ List available Interfaces
 | spool/        |       |
 | tmp/          |       |
 |               |       |
-|               |       |
-
-
-#### /proc
-* Running processes (Only exist in Memory)
-
-#### /mnt
-* To mount external filesystem
-
-#### /media
-* cdrom mounts
-
 
 
 ## Navigate the Filesystem

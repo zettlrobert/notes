@@ -518,3 +518,9 @@ How does the App react on the Device
 | suspending | App is about to be suspended |
 
 
+### Context
+* every widget has a context attachted to it
+* context is used internally by flutter to understand where the widget belongs
+* context gives direct communication channel across the entire widget tree
+* passing data between widgets
+* can access any other widget without passing data thorugh other widgets
