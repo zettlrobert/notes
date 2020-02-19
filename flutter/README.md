@@ -431,3 +431,28 @@ create new folder in root assets/fonts
 
 
 ## How does Flutter execute the build Method
+* flutter aims to give 60 FPS Seconds
+* updates screen 60 times per second
+* all apps and games with 60 fps work that way
+* screen updates x amount of seconds
+* only inefficient if it needs to recalculate
+* subsequent draws/refreshes, flutter takes the old informaiton and paints that
+
+### Widget Tree & Element Tree & Render Tree
+* You create Widget Tree
+* Flutter internally creates Element Tree and render tree internally
+
+| Widget Tree | Element Tree | Render Tree(What is on the Screen) |
+|---|---|---|
+| Configuration (rebuiilds frequently) | Links widgets with rendered objects (rarely rebuilds) | Rendered objects on the screen (rarely rebuilds) |
+||||
+| Container |Container Element (references the container points at the widget) (Also points to the rendered Object)| Rendered Box |
+| - Column | Column Element | Rendered Box |
+|   -My Sateless | MySateless Element| Rendered Box |
+|   -My Stateful | MyStateful Element (creates element and calls create State Method, which creates a State Object which is connected to the element)| Rendered Box |
+
+* setState automatically leads to build beeing called.
+* Widget is a Dart Class and can be instaneiated
+* Widget Tree is immutable, can only be overwritten with new configuration
+* when build runs a part of the widget tree is recreated
+
