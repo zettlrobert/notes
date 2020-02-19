@@ -429,3 +429,5 @@ create new folder in root assets/fonts
 * add propertys and constructor for values to button
 * create instance for button when needed
 
+
+## How does Flutter execute the build Method
