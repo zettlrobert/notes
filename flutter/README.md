@@ -456,3 +456,19 @@ create new folder in root assets/fonts
 * Widget Tree is immutable, can only be overwritten with new configuration
 * when build runs a part of the widget tree is recreated
 
+
+### How Flutter rebuilds and repaints the screen
+* state is connected to the element not the widget
+* state is a speerate object
+* if state is called old widget is marked as dirty
+* you get a new widget with the state data
+* state object does not change
+* new widget calls the build methods
+* entire widget tree is rebuilt, new instances in memory
+* **Elements hold a reference to the Widget**
+* Elements know to which Widget they were connected
+* only what is needed gets rerendered
+* element tree is not rebuild, only widget tree is rebuilt
+* element updates references, to know if new config is available
+* if it is, it is passed to the render tree
+
