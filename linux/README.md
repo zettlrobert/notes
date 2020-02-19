@@ -1,67 +1,55 @@
 # Introduction to Linux
 
 ### Access to Linux System VM on Windows
+Research setup on corresponding Documentation,  i recommend an actual Linux Machine or VM.
 * Putty(Terminal Client to Connect)
 * SecureCRT
 * ssh
 
 ### Network Command
-* ifconfig / ip addr --> List available Interfaces
+List available Interfaces
+        
+        $ ip addr 
+        $ ifconfig
 
 
 ## Linux File System
 #### Structure
 
-/bin/    /boot/    /dev/     /etc/     /home/   /lib/    /media/    /mnt/
+|directory name| what it is for|
+|--|--|
+| bin/          |everyday user commands                                                                                                 |
+| boot/         |files for the bootloader (grub/systemd)                                                                                |
+| dev/          |system devices (peripherals)                                                                                           |
+| etc/          |configuration files, always backup before changeing                                                                    |
+| home/         |home directory for the user names after username                                                                       |
+| lib/          |C programming library files needed by commands and apps                                                                |
+| media/        |                                                                                                                       |
+| mnt/          |                                                                                                                       |
+| opt/          |optional add-on applications (Not part of the OS)                                                                      |
+| root/         |root user home directory.It is not same as /                                                                           |
+| run/          |System daemons that start very early (e.g. systemd and udev) store temporary runtime files like PID files              |
+| sbin/         |                                                                                                                       |
+| svr/          |                                                                                                                       |
+| tmp/          |directory for temporary files                                                                                          |
+| usr/          |                                                                                                                       |
+| var/          |system and application log                                                                                             |
+|**IN usr/**    |                                                                                                                       |
+| bin/          |everyday user commands                                                                                                 |
+| include/      |                                                                                                                       |
+| lib/          |C programming library files needed by commands and apps                                                                |
+| sbin/         |System, filesystem commands                                                                                            |
+|**In var/**    |       |
+| cache/        |       |
+| lob/          |       |
+| spool/        |       |
+| tmp/          |       |
+|               |       |
+|               |       |
 
-  /opt/     /root/    /sbin/    /svr/     /tmp/   /usr/     /var/
-
-##### in usr
-/bin/  /include/  /lib/  /sbin/     in var: /cache/  /lob/  /spool/   /tmp/
-
-
-### File System Structure and its Description
-
-#### /boot
-* Contains file that is used by the boot loader (grub.cfg)
-
-#### /root
-* root user home directory.It is not same as /
-
-#### /dev
-* System devices (peripherals)
-
-#### /etc
-Configuration files
-* if change something make backup of file beforehand
-
-#### /bin --> /usr/bin
-* Everday user commands
-
-#### /sbin --> /usr/sbin
-* System/filesystem commands
-
-#### /opt
-* Optional add-on applications (Not part of OS apps)
 
 #### /proc
 * Running processes (Only exist in Memory)
-
-#### /lib --> usr/lib
-* C programming library files needed by commands and apps
-    strace -e open pwd
-
-#### /tmp
-* directory for temporary files
-
-#### /home
-* directory for user
-
-#### /var
-* System and application logs
-
-#### /run
-* System daemons that start very early (e.g. systemd and udev) store temporary runtime files like PID files
 
 #### /mnt
 * To mount external filesystem
