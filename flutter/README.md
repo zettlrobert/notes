@@ -471,4 +471,15 @@ create new folder in root assets/fonts
 * element tree is not rebuild, only widget tree is rebuilt
 * element updates references, to know if new config is available
 * if it is, it is passed to the render tree
+* SPLIT APP efficientliy, parts that change often should be confined in there widget
+
+
+### Good Code
+* Readybility Understandabilit Maintainability
+  * Understandable --> understand it in the future
+  * Understandable for others --> code guidelines
+* Performant 
+  * Certain practices can pimprove app performance
+  * Missning possible improvements doesn't automatically result in a bad laggy app
+  *  
 
