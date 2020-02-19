@@ -481,5 +481,19 @@ create new folder in root assets/fonts
 * Performant 
   * Certain practices can pimprove app performance
   * Missning possible improvements doesn't automatically result in a bad laggy app
-  *  
+  * re evaluate code explore new best practices
+
+
+### Widget Lifecycle
+note: from top to bottom
+
+|Statelesss Widgets| Stateful Widgets |
+|--|--|
+| Constructor Function | Constructor Function |
+|  | initState() |
+| build() | build() |
+|| setState() |
+||  didUpdateWidget |
+|| build() |
+|| dispose() |
 
