@@ -524,3 +524,9 @@ How does the App react on the Device
 * context gives direct communication channel across the entire widget tree
 * passing data between widgets
 * can access any other widget without passing data thorugh other widgets
+
+
+### What are keys
+* every Widget can have a key
+* certain widgets need a key
+* 
