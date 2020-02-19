@@ -1,4 +1,6 @@
 # [Flutter](https://flutter.dev/docs/get-started/install) (Developed by Google)
+Notes after Maximilian Schwazrnmüllers Flutter Course.
+* [] refactor to  
 
 The Flutter page describes how to Setup and writte the first Testapplication.
 
@@ -496,4 +498,23 @@ note: from top to bottom
 ||  didUpdateWidget |
 || build() |
 || dispose() |
+
+* @overrite initState();
+* the state in parentclass is not called, own state is called
+* super.initState();
+* @override didUpdateWidet(privious widget is argument)
+* could be compared to new widget with widget prop(ref to updated one)
+* @override dispose();
+
+
+### App Lifecycle
+How does the App react on the Device
+
+| Lifecycle State Name | When is it hit |
+|--|--|
+| inactive | App is inactive, no user input received |
+| paused | App not visible to user, running in background |
+| resumed | App is (again) visible and respondign to user input |
+| suspending | App is about to be suspended |
+
 
