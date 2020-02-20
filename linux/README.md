@@ -82,8 +82,9 @@ List available Interfaces
         $ ls -l
 
 **Example**
+
 | Type | Number of Links | Owner | Group | Size | Month | Day | Time | Name |
-|--|--|--|--|--|--|--|--|--|--|
+|--|--|--|--|--|--|--|--|--|
 | drwxr-xr-x | 3 | name | groupname | 4096 | Feb | 7 | 15:11 | Android |
 
 ### Linux File Types
