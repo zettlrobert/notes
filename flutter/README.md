@@ -527,6 +527,10 @@ How does the App react on the Device
 
 
 ### What are keys
-* every Widget can have a key
+* every Widget has a key
 * certain widgets need a key
-* 
+* only need if topmost item and a stateful widget, where a wrong state can get atached
+* UniqueKey() is not good if consstructors gets rerun
+* ValueKey() with a specifed identifier as arguemtn works best
+* mostly on listviews with stateful widgets
+

@@ -50,53 +50,41 @@ List available Interfaces
 
 ## Navigate the Filesystem
 
-#### cd
 * change directory
 
-#### pwd
+        $ cd
+
 * print working directory
 
-#### ls
+        $ pwd
+
 * list content of directory
+  
+        $ ls
 
-#### ls -l
+* list everything in directory as list
 
-* list list as List
+        $ ls -la
 
-#### ltr
 * list time(timestamp) reverse
 
-#### There are two paths to navigate to a filesystem
-* Absolute Path
- * An absolute path always begins with a "/". This indicates that the path starts at the root directory.
-* Relative Path
- * A relative path does not begin with a "/". It identifies a location relative to your working directory
+        $ ltr
+
+### There are two paths to navigate to a filesystem
+
+| Absolute Path | Relative Path |
+|--|--|
+|An absolute path always begins wwith a "/" This indicates that path starts at the root directory| A relativ path does not begin with a "/", it identifies a location relative to your working directory |
 
 
-## Directory Listing Attributes
-##### ls -l
-  Type  |  # of Links | Owner |  Group |  Size | Month | Day | Time | Name
-* dr
-  * directory
-* l
-  * link
-* regular file
-  * regular file
+### Directory Listing Attributes
 
+        $ ls -l
 
-### Creating Files and Directories
-* Creating Files
-  * touch
-  * cp
-  * vi
-
-* Creating Directories
- * mkdir
-
-* Copy
- * cp
-    * cp target newFileName
-
+**Example**
+| Type | Number of Links | Owner | Group | Size | Month | Day | Time | Name |
+|--|--|--|--|--|--|--|--|--|--|
+| drwxr-xr-x | 3 | name | groupname | 4096 | Feb | 7 | 15:11 | Android |
 
 ### Linux File Types
 | Starts with: | Meaning |
@@ -109,87 +97,87 @@ List available Interfaces
 | p | named pipe |
 | b | block device |
 
+### Creating Files and Directories
+* Creating Files
+ 
+        $ touch
+
+        $ cp
+
+        $ vi
+
+
+* Creating Directories
+
+        $ mkdir
+
+* Copy
+ 
+        $ cp
+
 
 ### Find Files and Directories
-Two main commands
-* find
-  * search from root directory for file ifcfg-enp0s3
-        $ find / -name "ifcfg-enp0s3"
+        
+* search from root directory for file ifcfg-enp0s3
 
-* locate
-  *  man find/locate --> list options for commands
+        $ find / -name "examplename"
+
+* locate (list options with man command)
+  
+        $ find/locate
 
 
 #### Difference between find and locate:
-locate
-*  uses a prebuildt database, which should be regularly updated
 
-find
-* iterates over a filesystem to locate  files.
+*  locate uses a prebuildt database, which should be regularly updated
+*  find iterates over a filesystem to locate  files.
 
-#### -->locate is faster than find, but can be inaccurate if the database is not updated.
+**locate is faster than find, but can be inaccurate if the database is not updated**
+
         $ run updatedb
 
 
 ### Changing Password
-        $ passwd userid
+
+        $ passwd username
 
 
 ### Wild Cards
-*
-* represents zero or more characters
+| * | ? | [] | \ | ^ | $ |||||||
+|--|--|--|--|--|--|--|--|--|--|--|--|
+| 0 or more characters | single character | range of characters | escapes following character | (caret) beginning of line | end of line |||||||
+|||||||||||||
 
-?
-* represents a single character
-
-[]
-* represents a range of characters
-
-#### Examples::
+**Example**
 * Create 9 test files
+
       $ touch [0-9]test
-
-\\
-* escape character
-
-^ (called: caret)
-* beginning of the line
-
-$
-* the end of the line
 
 
 ### Soft and Hard Links(Shortcuts)
-#### inode
-* pointer or number of a file on the hard disk
 
-#### soft link
-* link will be removed if file is removed or renamed
-  * ln -s
-
-#### hard link
-* !!Only work on same Partition
-* deleting renaming or moving the original file will not affect the hard link
- * ln
+| inode | soft link | hard link |
+|--|--|--|--|
+| pointer or number of a file on the hard disk | link will be removed if file is removed or renamed (ln -s) | only work on same partition (renaming or moving original file will not affect hard link)|
 
 
-### Commands Syntax
+## Commands Syntax
 **Command options and arguments**
 
-#### Commands typically have the syntax:
-command option(s) argument(s)
+        $ command option(s) argument(s)
 
-#### Options:
+### Options:
 * Modify the way that a command works
 * Usually consist of a hyphen or dash followed by a single letter
 * Some commands accept mult8iple options which can usually be grouped together after a signle hyphen
 
-#### Arguments:
+### Arguments:
 * Most commands are used together with one or more arguments
 * Some commands assume a default argument if none is supplied
 * Arguments are optional for some commands and required by others
-
-  man command--> shows Options for command
+* show options for command:
+* 
+        $ man command
 
 
 ### File Permissions
@@ -197,44 +185,47 @@ UNIX is a multi-user system. Every file and directory in your account can be pro
 Every user has responsibility for controlling access to their files.
 
 #### Permissions for a file or directory may be restricted to by types
-r
-* read
 
-w
-* write
+| r | w | x |
+|--|--|--|
+| read | write | execute |
 
-x
-* execute
 
-#### Each permission (rwx) can be controlled at three levels
-u
-* user = you
+### Each permission (rwx) can be controlled at three levels
 
-g
-* group = can be people in the same project
+|u|g|o|
+|--|--|--|
+| user | group | other |
+| you | group | everyone on the system |
 
-o
-* other = everyone on the system
+**File or Directory permission can be displayed by running ls -l command**
 
-#### File or Directory permission can be displayed by running ls -l command
-* rwxrwxrwx
 
-### Command to change permission
+## Command to change permission
+
         $ chmod
 
 
-## File Ownership
+### File Ownership
 There are two owners of a file or directory
 * User and group
-  * chown changes the ownership of a file
-  * chgrp changes the group ownership of a file
+  * changes the ownership of a file
+
+        $ chown
+
+* changes the group ownership of a file
+
+        $ chgrp
 
 
 ### Help Commands
 3 types of help commands
-*  whatis command
-*  command --help
-*  man command(for manual)
+
+        $ whatis
+
+        $ help
+
+        $ man
 
 
 ### TAB Completion and Up Arrow
@@ -244,36 +235,53 @@ There are two owners of a file or directory
 
 ### Adding Text to Files (Redirects)
 3 Simple ways to add text to a file
-*  vi (integrated text editor)
-*  redirect command output > or >>
-  * example
-    * result of ls -ltr to a file
-      * ls -ltr > filename
-    * echo > or >>
-      * echo "exampletext in an example sentence" > filename(one '>' overwrites last file)
-      * echo "this is another example sentence" > filename(two '>>' append test to file filename)
+
+| vi | > | >> |
+|--|--|--|
+| integrated text editor | redirect output | redirect output |
+||overwrites last file|append to end of file|
+
+**Example**
+
+        $ ls -ltr > filename
+
+        $ echo "example" > filename 
+
+        $ echo "other example" >> filename
 
 
 ### Standard Output to a file (tee)
-tee
-* is used to store and vie the output of any command
-  *  --> breaks output of a program so that it can be both displayed and saved in a file.(simultaneously)
-    *  echo "This is a Teststring" | tee testfile -->overwrittes 'testfile'
-    *  echo "This is a Teststring" | tee -a testfile --> appends to 'testfile'
+
+        $ tee
+
+* is used to store and view the output of any command
+  * breaks output of a program so that it can be both displayed and saved in a file.(simultaneously)
+ 
+  * overwrittes 'testfile'
+  
+        $ echo "This is a Teststring" | tee testfile 
+  
+  *  appends to 'testfile'
+  
+         $ echo "This is a Teststring" | tee -a testfile 
 
 
 ### Pipes
 A pipe is used by the shell to connect the output of one command directly to the input of another command
 *  Symbol for pipe |
- * command1 [arguments] | command2 [arguments]
 
-#### Example 1
-Output One Page at a time::
+        $ command1 [arguments] | command2 [arguments]
+
+
+**Example 1**
+* Output One Page at a time::
+        
         $ ls -ltr | more
 
-####  Example 2
+**Example 2**
 Gives you the last line of your output
 * Tipp: ll shorthand for ls -l(not on 'every' unixsystem)
+  
         $ ll | tail -1
 
 
@@ -286,17 +294,15 @@ command selected file destination
 | rm | remove |
 | mv | move and rename |
 | mkdir | create directory |
-| rm dir | remove directory |
-| rm -r | remove directory recursivly |
+| rm -r dir | remove directory recursivly |
 | rm -rf | forcefully removes sub-directories and its contents |
 | chgrp | change ownership (on gruop level) |
 | chown | change ownership (user level) |
 
 **. is current destination**
+* copys file to current location
 
         $ cp filename .
-
-copys file to current location
 
 
 ### File Display Commands(display file content)
@@ -310,88 +316,91 @@ copys file to current location
 
 
 ### Filters / Text Processors Commands
-#### cut
-cut parts of lines from specified files or piped data and prints to output
-* cut filename != work
-* man page for flags
+
+|  cut | awk | grep and egrep |
+|--|--|--|
+| cut parts of lines form specified files or piped data and prints to output | for data extraction fields from a file or from an output | global regular exprssion print, processes text line by line and prints any lines which match a specified pattern |
+| cut filename != work |  |  |
 
     $ cut -flags filename
 
-
-#### awk
-for data extraction fields form a file or from an output
-* man page
 * get first column
-     $ awk '{print $1}' filename
+
+        $ awk '{print $1}' filename
+
 * list first and 3rd column of output ls -l
-     $ ls -l | awk '{print $1,$3}'
+
+        $ ls -l | awk '{print $1,$3}'
+
 * search for "Jerry string in a file"
-     $ awk '/Jerry/  {print}' filename
+
+        $ awk '/Jerry/  {print}' filename
+
 * only first field of passwd-file
-     $ awk -F: '{print $1}' /etc/passwd
+
+        $ awk -F: '{print $1}' /etc/passwd
 
 
-#### grep and egrep
-global regular expression print, processes text line by line and prints any lines which match a specified pattern
 * search for keyword in a file
-    $ grep Keyword filename
+        
+        $ grep Keyword filename
 
 * egrep is for multiple keywords
-    $ egrep "keyword1|keyword2" filename
+        
+        $ egrep "keyword1|keyword2" filename
 
 
-#### sort
+
+### sort
 * sorts the file in alphabetical order
 * sort -r sorts in reverse
-    $ sort filename
 
-#### uniq
-sort before using uniq
+        $ sort filename
+
+
+### uniq
+* sort before using uniq
 * removes all duplicates from a file
 * sort | uniq gives you one from each
 
-#### wc
+### wc
 * wordcount
 * counts the wordcount in file
 
 
-
 ### Compare Files
 
-#### diff (compares line by line)
+* diff (compares line by line)
+  
         $ diff file1 file2
-#### cmp (compares byte by byte)
+
+### cmp (compares byte by byte)
+   
         $ cmp file1 file2
 
 
 ### Compress and un-Compress Files
 
-#### tar
-* compress
-
+|compress|uncompress|
+|--|--|
+|$ tar| $ tar xvfz |
+|gzip|gzip -d / unzip |
         $ tar cvf dirname.tar directoryName
-
-* uncompress
 
         $ tar xvf directoryName
 
-* gzip (compress)
-
         $ gzip directoryName
-
-* gzip -d OR gunzip (uncompress)
 
         $ gzip -d directoryName
 
-
-#### Truncate File Size(truncate)
+### Truncate File Size(truncate)
 is used to shrink or extend the size of a file to the specified size, CHOPS no compression
 size specifies integer
 
         $ truncate -s 10 filename
 
 
-#### Combining and splitting files
+### Combining and splitting files
 example:
 
         $ cat file1 file2 file3 > file4
@@ -410,44 +419,20 @@ split every two lines and put in file:
         $ split -l 2 examplefile outputname
 
 
-### Linux System Administration
+## Linux System Administration
 
 #### Linux File Editors
 
-available on most linux systems:
-*  vi
- * --> visual editor
-*  ed
- * --> standard line editor
-*  ex
- * --> extended line editor
-*  emacs
- * --> full screen editor
-*  pico
- * --> beginners editor
-*  vim
- * --> advanced version of vi
+| vi | ed | ex | emacs | pico | vim |
+|--|--|--|--|--|--|--|--|--|--|--|
+| visual editor | standart line editor | extended line editor | full screen editor || beginners editor | advanced version of vi |
 
 
 #### Most common commands vi(m)
 
-* i
- * insert
-
-* Esc
- * escape out of any mode
-
-* r
- * replace
-
-* d
- * delete
-
-* :q!
- * quit without saving
-
-* wq!
- * write and quit (write and safe)
+| i | Esc | r | d | :q! | wq! |
+|--|--|--|--|--|--|--|--|--|--|
+| insert| escape out of any mode | replace | delete | quit without saving | write and quit |
 
 
 ### "sed" Command
@@ -471,11 +456,10 @@ sed -i 's/NameA/NameB/g' filename search for NameA replace with NameB replace in
 
 ### Commands
 
-* useradd - crate new user
-* groupadd - create new group
-* userdel - delete user
-* groupdel - delete group
-* usermod - modify user
+| useradd | groupadd | userdel | groupdel | usermod |
+|--|--|--|--|--|--|--|
+| create new user | create new group | delete user | delete group | modify user |
+
 
 **Record is maintained in three different files**
 * /etc/passwd
@@ -483,44 +467,45 @@ sed -i 's/NameA/NameB/g' filename search for NameA replace with NameB replace in
 * /etc/shadow
 
 Example:
-useradd -g superheros -s /bin/bash -c "user description" -m -d /homne/spiderman spiderman
+
+        $ useradd -g superheros -s /bin/bash -c "user description" -m -d /homne/spiderman spiderman
 
 1. create user --> useradd spiderman
-1. check if created --> id spiderman --> go to home directory
-1. create new group --> gruopadd superheros --> cat /etc/groups
-1. delete user and home directory --> userdel -r spiderman
-1. delete group --> gruopdel groupname
-1. modify user --> usermod (look up manpage)
-1. add user to group --> usermod -G groupname username --> check grep username /etc/group
-1. chgrp for user and subsequent folders --> chgrp -R groupname username
+2. check if created --> id spiderman --> go to home directory
+3. create new group --> gruopadd superheros --> cat /etc/groups
+4. delete user and home directory --> userdel -r spiderman
+5. delete group --> gruopdel groupname
+6. modify user --> usermod (look up manpage)
+7. add user to group --> usermod -G groupname username --> check grep username /etc/group
+8. chgrp for user and subsequent folders --> chgrp -R groupname username
 
-#### Create user with all Parameters
 
-* useradd -g usergroup -s /bin/bash -c "Description for User" -m -d /home/username username
-* passwd username --> changes password
+### Create user with all Parameters
+
+        $ useradd -g usergroup -s /bin/bash -c "Description for User" -m -d /home/username username
+
+        $ passwd username --> changes password
 
 
 ### Switch users and sudo Access
 sudo access is a command which allows ordinary user to run root level commands
 
-* su - username
-* sudo command
-* visudo - edits /etc/sudoers
+|su|sudo|visudo|
+|--|--|--|--
+|username|command| edits /etc/sudoers|
 
 
 ### Monitor Users
-#### Basic Commands
-* who - tells you how many people are logged in --> if there is high load on system
-* last - every user who has been logged in --> with time of login
-* w - like who just with more information
-* finger - more information about user...
-* id - id username
+|who|last|w|finger|id|
+|--|--|--|--|--|
+|tells you how many people are logged in|every user who has been logged in|elike who just with more information|more information about user|id username|
+|if there is high load on system|with time of login|
 
 
 ### Talk to Users
-* users - see all loggedin users
-* wall - broadcasts message to everyone who is loggedin on the system
-* write - writte to one specific user
+|$ users|$ wall|$ write|
+|--|--|--|
+|see all loggedin users|broadcasts message to everyone who is logged in on the system|writte to one specific user|
 
 
 ### Linux Account Authentication
@@ -530,48 +515,36 @@ sudo access is a command which allows ordinary user to run root level commands
 
 
 ### Difference between Active Directory, LDAP, IDM, WinBIND, OpenLDAP
-* Active Directory = Microsoft --> for Windows
-* DIM = Identity Manger --> Linux (Red Hat)
-* WinBIND = Used in Linux to communicate with Windows (SAMBA)
-* OpenLDAP(open source) --> Directory Service for Linux or Unix type of Envoirnment
-* IBM Directory Server
-* LDAP = Lightweight Directory Access Protocol
+|Active Directory|DIM|WinBIND|OpenLDAP(open source)|IBM Directory Server|LDAP|
+|--|--|--|--|--|--|
+|Microsoft|Identity Manger|Used in Linux to communicate with Windows (SAMBA)|Directory Service for Linux or Unix type of Envoirment|
+|Windows|Linux(Red Hat)|||||
 
 
 ### System Utility Commands
-* date - date and time
-* uptime - how long the system has been up
-* hostname - hostname of linux machine
-* uname -a - details about system  
-* which - location of command you run (which pwd) ls -l /usr/bin/pwd
-* cal - calendar
-* bc - binary calculator
+|$ date|$ uptime|$ hostname|$ uname -a|$ which|$ cal|$ bc|
+|--|--|--|--|--|--|--|--|--|--|
+|date and time|how long the system has been up|hostname of linux machine|details about system|location of command you run which pwd ls -l /usr/bin/pwd|calendar|binary calculator|
 
 
 ## Processes and Jobs
-* Appllication = Service --> programm that runs on computer
-* Script = executalbe file
-* Process = executed script or command creates a process
-* Daemon = runs continously in the background, keeps listening
-* Threads = every process could have multiple threads
-* Job = created by scheduler to run application and services
+|Application|Script|Process|Daemon|Threads|Job|
+|--|--|--|--|--|--|--|
+|Service(Program that runs on computer)|executable file|execute script or command creates a process|runs continously in the background, keeps listening|every process could have multiple threads|created by scheduler to run application and servoces|
+
 
 ## Process/Service Commands
-* systemctl or service
-* ps --> allows to see processes which are running on system
-* top --> see all processes on system
-* kill --> kills process by name or processid
-* crontab --> schedule processes, applications and services
-* at --> like crontab but only onetime
+|$ systemctl|$ ps|$ top|$ kill|$ crontab|$ at|
+|--|--|--|--|--|--|
+||allows to see processes which are running on system| see all processes on system|kills process by name or processid|schedule processes, applicaitons and servics|like crontab but only onetime|
+
 
 ### Processes and Jobs
-* systemctl -> start and stop an application + enable at boottime
- * systemctl restart chronysl --> check with ps -ef | grep ntpd
- * systemctl status process
-* systemctl enable application --> creates syslink
-* systemctl stop application --> stop systemctl
-* top --> tell you about systemressources
-* crontab -e
+**systemctl**
+
+|start|restart chronysl|status process| enable|stop|top|crontab-e|
+|--|--|--|--|--|--|--|
+|start and stop an applicaiton + enable at boottime|||create syslink|tell you agbout systemressources|||
 
 
 #### Cronjobs
@@ -585,8 +558,8 @@ sudo access is a command which allows ordinary user to run root level commands
 * for hourly /etc/cron.d/0hourly
 
 
-#### Process Management
-##### Get prompt back and run Process
+## Process Management
+#### Get prompt back and run Process
 * Background = Ctrl-z, jobs and bg
 
 * Foreground = fg
@@ -605,22 +578,45 @@ sudo access is a command which allows ordinary user to run root level commands
 
 
 ### System Monitoring
-* top  - CPU, Memory information ...
+* CPU, Memory information ...
 
-* df -a  - diskpartition information
- * du  - spacemangement
+        $ top
 
-* dmesg  - output of the system related warnings
- * dmesg | more - anything related to systemhardware
+* Diskpartition information
+        
+        $ df -a
 
-* iostat 1  - how to communicate with disk refresh every second
+ * Spacemangement - careful!
 
-* netstat -rnv  -
- * netstat | more  - wahts connected to system and additional information
+        $ du
 
-* free  - gives you physical memory and swap
+* output of the system related warnings
 
-* cat /proc/cpuinfo  - read file cpuinfo
+        $ dmesg
+
+* anything related to systemhardware
+
+        $ dmesg | more - 
+
+* how to communicate with disk refresh every second
+
+        $ iostat 1
+
+
+* waht is connected to system and additional information
+        
+        $ netstat | more
+
+        $ netstat -rnv  -
+
+
+* gives you physical memory and swap
+        
+        $ free
+
+* read file cpuinfo
+
+        $ cat /proc/cpuinfo
 
 * cat /proc/meminfo | more
 
@@ -628,14 +624,21 @@ sudo access is a command which allows ordinary user to run root level commands
 ### Log Monitoring
 Log Directory = /var/log
 
-* boot -- system boot or reboot how memory is cleaned up if issues exist
-* chronyd = NTP  -- any type of changes we make on the chronyd service
-* cron  -- if a job or process the activity is logged here
-* maillog  -- send mail daemon income and outgoing mails are recorded here
-* secure  -- records all logging in and logging out activity
-* **messages** - if there is an issue with the machine look at this log!!!
- * grep -i error messages
-* httpd  --
+* boot
+  * system boot or reboot how memory is cleaned up if issues exist
+* chronyd = NTP
+  * any type of changes we make on the chronyd service
+* cron
+  * if a job or process the activity is logged here
+* maillog
+  * send mail daemon income and outgoing mails are recorded here
+* secure
+  * records all logging in and logging out activity
+* **messages**
+  * if there is an issue with the machine look at this log!!!
+ * grep -i 
+   * rror messages
+* httpd 
 
 
 ### System Maintenance Commands
@@ -649,31 +652,27 @@ Log Directory = /var/log
 ### Changing System Hostname
 hostname is safed in /etc/hostname
 
-* hostnamectl - set-hostname newhostname
+        $ hostnamectl - set-hostname newhostname
 
 
 ### Finding System Information
 * cat /etc/operatingsystem-release (exchange for os ll | grep release)
-* uname -a -- Linux, hostname, Kernelversion...
-* dmidecode | more -- Bios information ...
+
+* Linux, hostname, Kernelversion...
+
+        $ uname -a
+
+* Bios information
+
+        $ dmidecode | more
 
 
 ### Terminal Control Keys
 Some useful Keycombination usually with CTRL + Key
 
-* CTRL - u  -- erase everything typed in the command line
-
-* CTRL - c  --  stop/kill a command
-
-* CTRL - z  -- suspend a command
-
-* CTRL - d  -- exit from an interactive program (signals end of data)
-
-* clear  -- clears screen
-
-* exit  -- exit out of sheel, terminal or a user session
-
-* script  -- commans stores terminal activities in a log file that can be named by a user, when a name is not provided, the default file name "typescript" is used
+|CTRL - u|CTRL - c|CTRL - z|CTRL - d|clear|exit|script|
+|--|--|--|--|--|--|--|
+|erase everything typed in the command line|stop/kill a command|suspend a command|exit from an interactive program (signals end of data)|clears screen|exit out of sheel, terminal or a user session|command stores terminal activities in a log file that can be named by a user, when a name is not provided, the default file name "typescript" is used|
 
 
 ### Recover Root Password
@@ -691,63 +690,51 @@ edit file to allow writte:
 * reboot
 
 
-### Environment Variables
+## Environment Variables
 Dynamic-named value that can affect the way running processes will behave. They are part of the environment in which a process runs
 
 Defined rules and values to build an environment...
 
-##### View all environment variables
+### View all environment variables
  * env
  * printenv
 
-##### view one environment variable
+### view one environment variable
  * echo $shell
 
-##### set environment variables
+### set environment variables
  * export TEST=1
  * echo $TEST
 
-##### set environment variables
- * vi .bashrc
+### set environment variables
+ * vi .zshrc
  * TEST='123'
  * export TEST
 
-##### To set global environment variable
+## To set global environment variable
  * vi /etc/profile
  * TEST='123'
  * export TEST
 
-check for mail variable
-* echo $MAIL
-
-#### System Variables
+## System Variables
 * /etc/profile
-* /etc/bashrc
+* /etc/zshrc
 
 
 ## Linux Kernel
 Interface between hardware and Software
 
+
 ## Introduction to Shell
 It's like a container, Interface between users and Kernel/OS, CLI is a Shell
 
 
-#### Fidn your Shell
+#### Find your Shell
 * Echo $0
 * available Shells "cat /etc/shells"
 * /etc/passwd
 
-Windows GUI, KDE GUI, Linux sh, bash are shells
-
-
-### Types of Shells
-* Gnome
-* KDE
-* sh
-* bash - born again shell
-* csh
-* tcsh
-* ksh
+Windows GUI, KDE GUI, Linux sh, bash, zsh are shells
 
 
 ### Shell Scripting
