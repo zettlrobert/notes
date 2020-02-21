@@ -27,3 +27,7 @@
 	$ git clone https://github.com/powerline/fonts.git --deph=1
 
 	$ cd fonts && ./install.sh
+
+	$ fc-cache -f -v
+
+
