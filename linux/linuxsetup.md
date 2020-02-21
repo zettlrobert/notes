@@ -22,7 +22,7 @@
  * plugins=(git zsh-autosuggestions zsh-autosuggestions zsh-syntax-highlighting)
 
 
-### [fonts-powerline](git clone https://github.com/powerline/fonts.git --depth=1)
+### [fonts-powerline](https://github.com/powerline/fonts.git)
 
 	$ git clone https://github.com/powerline/fonts.git --deph=1
 
