@@ -60,7 +60,6 @@ Navigate to ~/.oh-my-zsh/custom/plugins/
 
 	$ cd fonts && ./install.sh
 
-<<<<<<< HEAD
 ## Kitty
 
 	$ sudo apt install kitty
