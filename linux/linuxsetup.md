@@ -1,4 +1,4 @@
-# Linux System Setup
+# Linux System Setup
 
 ## Gnome Extensions
 * Auto move windows
@@ -7,11 +7,10 @@
 * Dash to dock
 * Easy docker containers
 * Hide activites button
-* Kstatusnotifieritem/appindcator support
+* KStatusNotifierItem/AppIndicator Support
 * Lock keys
 * Netspeed
 * Openweather
-* Pomodoro
 * Removable drive menu
 * Ressource monitor
 * Sound input & output device chooser
@@ -25,10 +24,13 @@
 1. ohmyzsh
 1. fonts-powerline(from repository)
 1. kitty
+1. encryptr
 1. pulseeffects
 1. pulsaudio
 1. unzip
-
+1. papirus icons
+1. flatpak
+1. pomodoro
 
 ## Configuration
 ### [Install zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
@@ -87,9 +89,11 @@ Set 24bit sample-format and 48000 in /etc/pulse/daemon.conf
 
 	$ sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
 
-	$ sudo apt install pulseeffects pulseaudio --install-recommended
+	$ sudo apt install pulseeffects pulseaudio
 
 #### [Pulseeffect Presets](https://github.com/JackHack96/PulseEffects-Presets)
+
+Extract files to ~/.config/PulseEffects/output
 
 
 ## Theming
@@ -107,4 +111,35 @@ Install User themes and browser extension to install gnome extensions
 
 * extract tar.xz into ~/.icons/ or /usr/share/icons/
 * use Gnome Tweak Tools
+* on Ubuntu use papirus ppa and package to install
 
+
+## Development
+
+#### Codium
+
+	$ wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add - 
+
+	$ echo 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list 
+
+	$ sudo apt update && sudo apt install codium
+
+
+### NVM
+	$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+
+insert path to .zshrc
+
+### Node
+
+	$ nvm install node
+
+
+### Go
+
+	
+### Flutter
+
+
+### Docker
+	 
