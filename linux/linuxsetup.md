@@ -129,7 +129,8 @@ Install User themes and browser extension to install gnome extensions
 ### [Razer Peripherals](https://openrazer.github.io/#download)
 * add openrazer/stable
 * [polychromatic](https://github.com/polychromatic/polychromatic)
-
+* add user to group plugdev
+	$ sudo gpasswd -a $USER plugdev
 
 
 
