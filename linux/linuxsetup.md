@@ -36,6 +36,9 @@
 1. [Discord](https://discordapp.com)
 1. [Franz](https://meetfranz.com)
 1. [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
+1. [openrazer/stable](https://openrazer.github.io/#download)
+1. [polychromatic/stable](https://github.com/polychromatic/polychromatic)
+
 
 ## AppImages
 1. Bitwarden
@@ -123,7 +126,14 @@ Install User themes and browser extension to install gnome extensions
 * on Ubuntu use papirus ppa and package to install
 
 
-## Development
+### [Razer Peripherals](https://openrazer.github.io/#download)
+* add openrazer/stable
+* [polychromatic](https://github.com/polychromatic/polychromatic)
+
+
+
+
+# Development
 
 #### Codium
 
