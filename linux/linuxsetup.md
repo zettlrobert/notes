@@ -38,6 +38,7 @@
 1. [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
 1. [openrazer/stable](https://openrazer.github.io/#download)
 1. [polychromatic/stable](https://github.com/polychromatic/polychromatic)
+1. timeshift
 
 
 ## AppImages
