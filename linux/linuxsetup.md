@@ -25,6 +25,7 @@
 1. fonts-powerline(from repository)
 1. kitty
 1. gnome-tweaks
+1. gtk2-engines-murrine
 1. pulseeffects
 1. pulsaudio
 1. unzip
