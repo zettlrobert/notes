@@ -34,6 +34,7 @@
 1. pomodoro
 1. [nordvpn](https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-and-Linux-Mint.htm)
 1. [Discord](https://discordapp.com)
+1. [Franz](https://meetfranz.com)
 
 
 ## AppImages
