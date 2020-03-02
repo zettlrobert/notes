@@ -39,7 +39,7 @@
 1. [openrazer/stable](https://openrazer.github.io/#download)
 1. [polychromatic/stable](https://github.com/polychromatic/polychromatic)
 1. timeshift
-
+1. google-chrome-stable
 
 ## AppImages
 1. Bitwarden
@@ -134,6 +134,9 @@ Install User themes and browser extension to install gnome extensions
 	$ sudo gpasswd -a $USER plugdev
 
 
+### Storage devices
+* create folders /media/mountfolder
+* edit /etc/fstab
 
 # Development
 
