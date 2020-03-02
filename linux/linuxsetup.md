@@ -41,7 +41,7 @@
 1. timeshift
 1. google-chrome-stable
 1. neofetch
-
+1. ntfs-3g
 
 
 
