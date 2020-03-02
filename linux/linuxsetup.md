@@ -41,8 +41,9 @@
 1. timeshift
 1. google-chrome-stable
 1. neofetch
-
-
+1. ntfs-3g
+1. nfs-common
+1. cifs-utils
 
 
 ## AppImages
