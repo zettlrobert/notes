@@ -40,6 +40,10 @@
 1. [polychromatic/stable](https://github.com/polychromatic/polychromatic)
 1. timeshift
 1. google-chrome-stable
+1. neofetch
+
+
+
 
 ## AppImages
 1. Bitwarden
