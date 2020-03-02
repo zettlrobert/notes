@@ -17,6 +17,8 @@
 * User themes
 * Vpn indicator
 * Gtile
+* Workspace Indicator
+
 
 ## Installed Packags
 1. vim
