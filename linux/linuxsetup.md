@@ -142,6 +142,19 @@ Install User themes and browser extension to install gnome extensions
 * create folders /media/mountfolder
 * edit /etc/fstab
 
+
+### Insync
+Install with .deb
+Install nautilus package
+
+
+### Snap
+
+	$ sudo apt install snapd
+
+Update with snap refresh
+
+
 # Development
 
 #### Codium
@@ -161,6 +174,30 @@ insert path to .zshrc
 ### Node
 
 	$ nvm install node
+
+#### Postman
+
+	$ sudo snap install postman	
+
+	
+Download and extract Postman, to create Desktop integration place a file:
+
+	~/.local/share/application/Postman.desktop
+
+Content:
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=/opt/Postman/app/Postman %U
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;
+
+
+#### MongoDB Compass
+Download and install .deb
 
 
 ### Go
