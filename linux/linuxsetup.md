@@ -44,6 +44,8 @@
 1. ntfs-3g
 1. nfs-common
 1. cifs-utils
+1. ffmpeg
+1. obs-studio
 
 
 ## AppImages
@@ -117,11 +119,13 @@ Extract files to ~/.config/PulseEffects/output
 ## Theming
 Install User themes and browser extension to install gnome extensions
 
+
 #### [Material Black Theme](https://github.com/rtlewis88/rtl88-Themes)
 
 * Install dependency Murrine theme engine
 * Extract tar.xz to ~/.themes/ or /usr/share/themes
 * activate with GNOME Tweak Tool
+
 
 ##### For Icons
 * Papirus
@@ -154,6 +158,13 @@ Install nautilus package
 	$ sudo apt install snapd
 
 Update with snap refresh
+
+
+#### OBS
+ffmpeg required
+
+	$ sudo add-apt-repository ppa:obsproject/obs-studio
+
 
 
 # Development
@@ -201,11 +212,64 @@ Categories=Development;
 Download and install .deb
 
 
-### Go
+### [Go](https://golang.org/doc/install)
+* download go
+* extract and move to /usr/local
+* add path to .profile or .zshrc
+* create space to save go projects(goworkspace) add to GOPATH
+
+	export GOPATH=/media/zerodev/go
+	export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
 
 	
-### Flutter
+### [Flutter](https://flutter.dev/docs/get-started/install/linux)
+
+##### System Requirements for Fluter
+bash, curl, git 2.x, mkdir, rm, unzip, which, xz-utils, zip
+
+1. Get source code from [Flutter repo](https://github.com/flutter/flutter)
+1. clone it to the dir where you want flutter to live
+1. edit shell rc and add PATH, change path to where flutter lives
+
+	$ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
+
+1. must me absolute path
+1. echo $PATH
+1. which flutter
+1. run flutter doctor
+
+#### Android setup
+Flutter relies on a full installation of Android STudio to supply its Android platform dependencies.
+
+1. Download [Android Studio](https://developer.android.com/studio)
+1. install required libraries
+
+	$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+
+1. extract tar -xvf android...
+1. move to /usr/local/ for logged in user /opt/ for shared installation
+1. intall open-jdk
+
+	$ sudo apt install defualt-jdk
+
+1. KVM/ For Emulator in accelerated mode
+ 1. check if kvm is supported, output must be 1 or more
+
+	$ egrep -c '(vmx|svm)' /proc/cpuinfo
+
+	$ sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 
 
-### Docker
+1. execute, navigate to android-studio&bin& and execute studio.sh
+1. create virtual device in Android Studio with Android ADK
+1. create desktiop entry in Android Studio tools --> generate desktop entry
+1. install flutter and dart plugin
+1. install SDK Tools
+1. Set Path in .zshrc
+1. run flutter upgrade if there re errors
+
+
+
+### [Docker](../docker/README-old.md)
 	 
