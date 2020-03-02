@@ -46,6 +46,7 @@
 1. cifs-utils
 1. ffmpeg
 1. obs-studio
+1. beets
 
 
 ## AppImages
