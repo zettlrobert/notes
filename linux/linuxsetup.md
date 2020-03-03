@@ -102,6 +102,23 @@ Next Window: CTRL+m
 Prevoius Window: CTRL+n
 
 
+#### zsh theme [powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
+* install fonts 
+ * MesloLGS NF Regular.ttf
+ * MesloLGS NF Bold.ttf
+ * MesloLGS NF Italic.ttf
+ * MesloLGS NF Bold Italic.ttf
+
+	$ fc-cache -fv
+
+* clone theme into oh-my-zsh custom/themes/
+
+	$ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+* set ZSH_THEME in .zshrc
+
+
+
 ## Sound
 Set 24bit sample-format and 48000 in /etc/pulse/daemon.conf
 * default-sample-format = s24le
