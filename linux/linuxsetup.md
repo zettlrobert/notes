@@ -52,6 +52,7 @@
 1. spotify-client
 1. timeshift
 1. deja-dup
+1. locate
 
 
 ## AppImages
