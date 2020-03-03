@@ -49,6 +49,9 @@
 1. ffmpeg
 1. obs-studio
 1. beets
+1. spotify-client
+1. timeshift
+1. deja-dup
 
 
 ## AppImages
@@ -133,6 +136,7 @@ Install User themes and browser extension to install gnome extensions
 ##### For Icons
 * Papirus
 * Suru++ and Numix icons and folers
+* candy-icons
 
 * extract tar.xz into ~/.icons/ or /usr/share/icons/
 * use Gnome Tweak Tools
