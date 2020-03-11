@@ -20,7 +20,7 @@
 * Workspace Indicator
 
 
-## Installed Packags
+## Installed Packages
 1. vim
 1. zsh
 1. ohmyzsh
@@ -53,6 +53,13 @@
 1. timeshift
 1. deja-dup
 1. locate
+1. libmediainfo-dev
+1. deluge
+1. cuetool
+1. shntool
+1. flacon
+1. vlc
+1. youtube-dl
 
 
 ## AppImages
@@ -79,7 +86,7 @@ Navigate to ~/.oh-my-zsh/custom/plugins/
 	$ git clone [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 	$ git clone [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
  
- * plugins=(git zsh-autosuggestions zsh-autosuggestions zsh-syntax-highlighting)
+ * plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 
 
