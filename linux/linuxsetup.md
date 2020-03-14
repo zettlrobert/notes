@@ -60,6 +60,7 @@
 1. flacon
 1. vlc
 1. youtube-dl
+1. pdftk
 
 
 ## AppImages
