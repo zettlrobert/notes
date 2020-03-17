@@ -11,7 +11,7 @@
 
 * add start script to application
 
-* provide Heroku Provided Port via Heroku Envoirement Variable
+* provide Heroku Provided Port via Heroku environment Variable
 
       $ const port = process.env.PORT
 

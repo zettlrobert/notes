@@ -1,8 +1,8 @@
 # [Flutter](https://flutter.dev/docs/get-started/install) (Developed by Google)
-Notes after Maximilian Schwazrnmüllers Flutter Course.
+Notes after Maximilian Schwarzmüller Flutter Course.
 * [] refactor to  
 
-The Flutter page describes how to Setup and writte the first Testapplication.
+The Flutter page describes how to Setup and write the first test-application.
 
 ## What is Flutter
 A "tool" that allows you to build native cross-platform apps with one programming language and codebase.
@@ -30,21 +30,21 @@ Flutter is a Framework using the Dart Programming Language
 Everything in the App is a Widget and Widget is a small Codesnipped the Whole App is a Widget
 
 ### One Codebase
-Render different Content based on the Plattform if Android or IOS misbehave
+Render different Content based on the Platform if Android or IOS misbehave
 
 ### How is Flutter/Dart converted to a Native App
 Flutter compiles Flutter Code to Native Code, the End App is a compiled Version of your Code --> High Performance Applications
 
-### Flutter does not use Platform Primitves
+### Flutter does not use Platform Primitives
 Flutter directly controls every pixel which is drawn, it ships with its own engine which controls the entire screen!
-A log of contorl  and flexibility.
+A log of control  and flexibility.
 
 ### Flutter Versions
 Flutter versions change frequently! But it is very stable!
-* Bugfixes
+* bug fixes
 * Improvements
 * Niché features
-* Implement things in a diffrent way
+* Implement things in a different way
 
 ## [Installation](https://flutter.dev/docs/get-started/install/linux)
 
@@ -75,12 +75,12 @@ Apple-styled (Cupertino) Widgets are also offered
 | Dart + Flutter | JavaScript/React.js | JavaScript (any or no Framework) |
 | Compiled Native Apps | Partly compiled(UI Components) Native Apps | WebView-hosted Web Apps |
 | Does NOT compile to iOS / Android UI Components | Does compile to iOS/Android UI Components | Does NOT compile to iOS / Android UI Components |
-| Cross-platform (mobile apps, web apps, desktop apps) | Mostly mobile apps(+ React Native Web) | Cross-platform (mobiel apps, web apps, desktop apps) |
+| Cross-platform (mobile apps, web apps, desktop apps) | Mostly mobile apps(+ React Native Web) | Cross-platform (mobile apps, web apps, desktop apps) |
 | Google | Facebook | Ionic |
 
 
 # Flutter and Dart Basics
-Basics of Flutter and Dart with flutter_quizz_app
+Basics of Flutter and Dart with flutter_quiz_app
 
 * create flutter app with:
 
@@ -101,7 +101,7 @@ Basics of Flutter and Dart with flutter_quizz_app
 * test 
   * automated test 
 * .gitignore
-* .metadate
+* .metadata
   * managed by flutter
 * .packages
   * internal dependencies  
@@ -124,23 +124,23 @@ Programming Framework for the Dart programming language, widgets are build
 * add type to each function
 * var keyword for variable 
 * type inference --> determines type from assigned values
-* use type if value is not assigned immidiately
-* everything in Dart is an Object(Datastructure with different Metadata)
+* use type if value is not assigned immediately
+* everything in Dart is an Object(data structures with different Metadata)
 * OOP
-* class keyword for object Functionname should be capitalized
+* class keyword for object function name should be capitalized
 * variables in class are called properties
-* initiate class, call class like function --> Functionname() 
+* initiate class, call class like function --> functionname() 
 #### Part 2
 * Dart classes need constructors (methods)
 * constructor executes only once, when class instance is initiated
 * written exactly like class
 * Person(String inputName, int inputAge)
-* Dart supports scopping
+* Dart supports scoping
 * this refers to class level variable without scoped (for example to constructor input)
-* **named Arguments** {wrap in curlys} target by creating Data exmp: inputName: 'Name' great for functions which take a lot of arguments
+* **named Arguments** {wrap in curlys} target by creating Data example: inputName: 'Name' great for functions which take a lot of arguments
 * @required to make named arguments required (flutter specific)
-* constructor doesnt have to be written completely, in dart arguments can be passed with this.argument keyword
-* Dart can use Arrow Shorthand for exaclty one Expression!(arrow function)
+* constructor doesn't have to be written completely, in dart arguments can be passed with this.argument keyword
+* Dart can use Arrow Shorthand for exactly one Expression!(arrow function)
 * Dart has lists created with []
 
 
@@ -160,18 +160,18 @@ Programming Framework for the Dart programming language, widgets are build
 Even the Page is a Widget Scaffold
 
 * create class NamethisApp
-* import dependencie package:flutter/material.dart
+* import dependencies package:flutter/material.dart
 * NamethisApp extends StatelessWidget
 * create build method with context --> context holds metainformation about widget
-* BuildContext is a specail Object Type
-* build Method nees to return Widget <-- Add Type
+* BuildContext is a special Object Type
+* build Method needs to return Widget <-- Add Type
 * add home Argument to MaterialApp
 * Add Text Widget()
 
 * runApp() needs to be implemented in main
 * the build Method is called
 * each class needs a build Method!
-* in Eample: Materal app uses named Arguemtn which is named home and there is a text widget which is a dart class with hello argument
+* in example: material app uses named arguments which is named home and there is a text widget which is a dart class with hello argument
 * @override decorator makes it clear that we override build Method GOOD PRACTICE if a method which exists in class we extend add override
 
 
@@ -183,57 +183,57 @@ Even the Page is a Widget Scaffold
   
 
 ## Different Types of Widgets
-* Vislible Widdgets 
+* visible Widgets 
   * Output & Input
   * Raised Button, Text, Card
   * **Draw onto the screen**
 * Invisible Widgets
-  * Layout & Controll
+  * Layout & Control
   * Row(),. COlumn(), ListView()
-  * **Give App Structure and controll**
+  * **Give App Structure and control**
 
 
 ### Connect Buttons and Functions
 * All Data Widget uses should belong into the class so that it is a Standalone Widget
 * onPressed wants to execute a function, pointer has to be passed --> function without ()
-* Pass name of cuntion to button not result of function execution
-* if you need a function in only one place, you can use a annonymous function
+* Pass name of function to button not result of function execution
+* if you need a function in only one place, you can use a anonymous function
 * () => {} // one line expression
 * () {} // For longer function body
 
 ### Updating Widget Data, understanding State
-* items from Lists(arraylike) are accessed with . (object methods) or []
+* items from Lists(array like) are accessed with . (object methods) or []
 * **Whats State**: State is Data Information used by the App
   * App State: Authenticated User, lOaded Job...
-  * Widget State: Which Question is sleected is a loading spinner displayed
+  * Widget State: Which Question is selected is a loading spinner displayed
 
 Stateless
 * Data can change externally
-* Getrs rerendererd when Input Data changes
+* gets rendered when Input Data changes
 
-Stateful
+Sateful
 * Data can change
 * Widget has internal State
 * Updates Userinterface by internal State change or external Data change
 
 ### State
 * State is a generic class form Flutter
-* State is persistend and attached to widget --> element in user Interface
+* State is persistent and attached to widget --> element in user Interface
 * class that extends state needs to be conected to Widget class
-* < WidgetName > <- add Pionter to Class
-* setState usually takes annonouymus function and takes the expressions which change the state
+* < WidgetName > <- add Pointer to Class
+* setState usually takes anonymous function and takes the expressions which change the state
 
 ### Private Properties
 * _ Syntax for private methods and props declared with underscore cant be used outside of the class where they are declared
 
 
 ### Creating custom Widget
-* create "st" provides codesnipped
+* create "st" provides code snippets
 * only if constructor argument is wrapped in curlys it is a  named argument if not it is a positioned Argument
-* add final to tell Dart a value won't change after initialisation
+* add final to tell Dart a value won't change after initialisation 
 
 ### Styling basics
-* use named Arguemtns like style Arguemnt
+* use named arguments like style argument
 * named Arguments takes a Object based on the class which is provided my material dart
 * container widget is used to style
 * container core is always the child
@@ -242,15 +242,15 @@ Stateful
 * Lifting the State up, State is Managed on shared, common denomninator the direct Parent of the Widgets
 
 ### Maps
-* Built in Datastructure
+* Built in data structure
 * crated with {} or Map
 * key and value pairs
 
 ### final vs const
-* final if a vlaue doenst change from the point of time when a program runs, can be initated with a value
+* final if a value doesn't change from the point of time when a program runs, can be initiated with a value
 * final is a runtime constant value
-* const is compiletime constant --> also means runtime constant
-* const can be added infront of the variable or infront of the value
+* const is compile time constant --> also means runtime constant
+* const can be added infront of the variable or before of the value
 
 
 ## Running Apps on Different Devices & Debugging Apps
@@ -261,10 +261,10 @@ Stateful
 * ALWAYS test on real Devices!
 
 **iOS**
-* need MacOS --> look for workarround
+* need MacOS --> look for workaround
 * Xcode
 * in Project ./iOS/Runner...
-* Left Bar Root Element -> Signing & Capabilites
+* Left Bar Root Element -> Signing & capabilities
 * Need Apple Developer Account (developer.apple.com --> account)
 * open -a Simulator.app
 Running on real iOS Device
@@ -323,13 +323,13 @@ Running on real iOS Device
 | Takes exactly one child widget | Takes multiple child widgets|
 | Rich alignment & styling options | Alignment but no styling options |
 | Flexible with (e.g. child width, available width) | always takes full available height or width |
-| **Perfect for fcuston styling & alignment** | **Must-use if widgets sit next to / above each other** |
+| **Perfect for custom styling & alignment** | **Must-use if widgets sit next to / above each other** |
 
 
 ### String interpolation
 * $ tells dart that you want to interpolate some value
 * '${variable.field}'
-* \ escape charachter in stirng interpolation
+* \ escape characters in string interpolation
 
 ### Format Date with extra Package
 
@@ -352,7 +352,7 @@ create new folder in root assets/fonts
 * pubspec.yaml
 * define family
 * define additional information like fontweight
-* add defeault ThemeData object for expamle for appBarTheme
+* add default ThemeData object for example for appBarTheme
 
 ### Images
 * need to be included in pubspecs.yaml
@@ -365,14 +365,14 @@ create new folder in root assets/fonts
 * each column in a row is as big as it needs to be or as big as you tell it to be
 * Flexible Widget with fit property
 * fit takes a flexfit configuration
-* Exbanded Widget
+* Expanded Widget
 * expanded only knows flex configurations
 
 ### Futures
 * showDatePicker returns a Future
 * Future is a Class built into Dart
 * Classes that allow to create Objects which will give a Value in the Future (for http requests for example)
-* immidiately returns future but no value for said future
+* immediately returns future but no value for said future
 * future triggers once value is returned
 * .then can be used on future 
 * code execution will not stop
@@ -381,15 +381,15 @@ create new folder in root assets/fonts
 * One Codebase
 * One Widget Tree
 * Different Leaves if Platform.isIOS
-* Andriod Sub-Tree
+* android Sub-Tree
 * iOS Sub-Tree
 
 ### Calculating Sizes Dynamically
 * MediaQuery.of(context)
-* size Propertie
+* size property
 * access to height and width
-* asign height with multiply between 0 and 1
-* substract appbar, statusbar
+* assign height with multiply between 0 and 1
+* subtract appbar, statusbar
 
 ### Constraints
 * Widget rendered on screen
@@ -398,7 +398,7 @@ create new folder in root assets/fonts
 * disallow landscape mode -->
   * import flutter/services.dart
   * SystemChrome
-  * setPrferredOrientations([DeviceOrientation.portraitUp])
+  * setPreferredOrientations([DeviceOrientation.portraitUp])
 
 ### Adjust to Landscape Mode
 * Switch element
@@ -428,7 +428,7 @@ create new folder in root assets/fonts
 * import material and cupertino
 * stateless class
 * import dart:io for Platform check
-* add propertys and constructor for values to button
+* add property and constructor for values to button
 * create instance for button when needed
 
 
@@ -446,7 +446,7 @@ create new folder in root assets/fonts
 
 | Widget Tree | Element Tree | Render Tree(What is on the Screen) |
 |---|---|---|
-| Configuration (rebuiilds frequently) | Links widgets with rendered objects (rarely rebuilds) | Rendered objects on the screen (rarely rebuilds) |
+| Configuration (rebuilds frequently) | Links widgets with rendered objects (rarely rebuilds) | Rendered objects on the screen (rarely rebuilds) |
 ||||
 | Container |Container Element (references the container points at the widget) (Also points to the rendered Object)| Rendered Box |
 | - Column | Column Element | Rendered Box |
@@ -454,14 +454,14 @@ create new folder in root assets/fonts
 |   -My Stateful | MyStateful Element (creates element and calls create State Method, which creates a State Object which is connected to the element)| Rendered Box |
 
 * setState automatically leads to build beeing called.
-* Widget is a Dart Class and can be instaneiated
+* Widget is a Dart Class and can be instantiated
 * Widget Tree is immutable, can only be overwritten with new configuration
 * when build runs a part of the widget tree is recreated
 
 
 ### How Flutter rebuilds and repaints the screen
 * state is connected to the element not the widget
-* state is a speerate object
+* state is a separate object
 * if state is called old widget is marked as dirty
 * you get a new widget with the state data
 * state object does not change
@@ -473,16 +473,16 @@ create new folder in root assets/fonts
 * element tree is not rebuild, only widget tree is rebuilt
 * element updates references, to know if new config is available
 * if it is, it is passed to the render tree
-* SPLIT APP efficientliy, parts that change often should be confined in there widget
+* SPLIT APP efficiently, parts that change often should be confined in there widget
 
 
 ### Good Code
-* Readybility Understandabilit Maintainability
+* Readability Understandabily Maintainability
   * Understandable --> understand it in the future
   * Understandable for others --> code guidelines
-* Performant 
+* performant 
   * Certain practices can pimprove app performance
-  * Missning possible improvements doesn't automatically result in a bad laggy app
+  * missing possible improvements doesn't automatically result in a bad laggy app
   * re evaluate code explore new best practices
 
 
@@ -514,23 +514,23 @@ How does the App react on the Device
 |--|--|
 | inactive | App is inactive, no user input received |
 | paused | App not visible to user, running in background |
-| resumed | App is (again) visible and respondign to user input |
+| resumed | App is (again) visible and responding to user input |
 | suspending | App is about to be suspended |
 
 
 ### Context
-* every widget has a context attachted to it
+* every widget has a context attached to it
 * context is used internally by flutter to understand where the widget belongs
 * context gives direct communication channel across the entire widget tree
 * passing data between widgets
-* can access any other widget without passing data thorugh other widgets
+* can access any other widget without passing data through other widgets
 
 
 ### What are keys
 * every Widget has a key
 * certain widgets need a key
 * only need if topmost item and a stateful widget, where a wrong state can get atached
-* UniqueKey() is not good if consstructors gets rerun
-* ValueKey() with a specifed identifier as arguemtn works best
+* UniqueKey() is not good if constructors gets rerun
+* ValueKey() with a specified identifier as arguments works best
 * mostly on listviews with stateful widgets
 

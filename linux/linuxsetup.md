@@ -61,6 +61,7 @@
 1. vlc
 1. youtube-dl
 1. pdftk
+1. darktable
 
 
 ## AppImages

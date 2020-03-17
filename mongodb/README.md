@@ -1,10 +1,10 @@
 # No-SQL-DB [MongoDB](https://www.mongodb.com/download-center/community)
 
-* Collections list of entrys
+* Collections list of entry
  * list of users
  * list of tasks for users
 
-1. Documents(list of entrys in Collection) instead of Row/Record
+1. Documents(list of entry in Collection) instead of Row/Record
 1. Fields(as many fields as needed per documents) instead of Columns
 
 

@@ -6,7 +6,7 @@ Syntactically Awesome StyleSheets extension Language for CSS
 Compiling Sass
   - must be compiled to css
 
-    //Filelocation
+    // filelocation
     sass yourfile.scss yourfile.css
 
     //Automate with build tools or own script
@@ -22,7 +22,7 @@ Nesting
   Place selectors inside the scope of another selector
     - variables scope is the context in which a variable is defined and available to use
     - scope of a selector between {}
-    - selectors inside the scope of antother selector are referred to as children
+    - selectors inside the scope of another selector are referred to as children
 
 
 Variables
@@ -44,7 +44,7 @@ Maps & Lists
     Lists
      - can be separated by either spaces or commas   --> 1.5em Helvetica bold;
                                                      --> Helvetica, Arial, sans-serif
-     - you can also sourround a list with parantheses and create lists made up of lists
+     - you can also sourround a list with parentheses and create lists made up of lists
 
     Maps
      - similar to lists, but instead each object is a key-value pair
@@ -55,7 +55,7 @@ Maps & Lists
 
 The & Selector in Nesting
   & character is used to specify where a parent selector should be inserted.
-  Write pseudoclasses in a less reptitive way.
+  Write pseudoclasses in a less repetitive way.
 
   SCSS
   .notecard{
