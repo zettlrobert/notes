@@ -62,6 +62,8 @@
 1. youtube-dl
 1. pdftk
 1. darktable
+1. ranger
+1. w3m-img
 
 
 ## AppImages
