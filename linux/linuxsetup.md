@@ -62,12 +62,18 @@
 1. youtube-dl
 1. pdftk
 1. darktable
-1. ranger
-1. w3m-img
+1. zoom
+1. cheese
+1. kritalime/ppa
+1. deluge
 
 
 ## AppImages
 1. Bitwarden
+
+
+## Flatpaks
+1. GIMP
 
 
 ## Configuration
