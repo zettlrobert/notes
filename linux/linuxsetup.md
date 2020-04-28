@@ -66,6 +66,8 @@
 1. cheese
 1. kritalime/ppa
 1. deluge
+1. zoom
+1. Microsoft Teams
 
 
 ## AppImages
