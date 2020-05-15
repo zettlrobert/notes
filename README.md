@@ -37,6 +37,8 @@ Each file is named in the subdirectories is names "README" so it gets displayed 
 
 [vim](./vim)
 
+[vue](./vue)
+
 [webpack](./webpack)
 
 [zsh](./zsh)
