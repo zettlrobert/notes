@@ -232,6 +232,7 @@ insert path to .zshrc
 	$ nvm install node
 
 #### Postman
+Install Flatpak from Pop Shop!
 
 	$ sudo snap install postman	
 
