@@ -73,3 +73,55 @@ Vue is lean & small 16kb minified and gzipped for the core framework, fast runti
 * `v-model='nameProp'` directive tells vue to setup two-way data binding
 
 ### Reacting to changes with Computed Properties
+* to model cross dependency properties use computed properties
+* dependent properties
+* data in a vue component is not reactive!
+* methods get executed each time a property changes --> the pages updates
+* computed functions can be used like properties
+* **everything stored here can be used like data stored in the data object**
+* **RESULT IS CACHED**
+* use methods only if you know that you don't want to cache the result!
+
+### An Alternative to Computed Properties: Watching for Changes
+* **watch** executes code upon data changes
+* watch needs a key which matches a property 
+* the watch function gets executed when the matching property changes
+* but use computed properties where possible
+* use watch when you need **asynchronous** tasks
+* for example timeouts for some execution
+* inside closures the this state needs to be saved in a variable
+* watch does not set properties, only set code which should run if a property changes
+
+### Saving Time with Shorthands
+| code | shorthand|
+|---|---|
+| v-on:click | @click |
+| v-bind:href | :href |
+
+### Dynamic Styling with CSS Classes - Basics
+* in order to conditionally attach a class it needs to be bound to a property
+* `:class="{ 'red': attachRed }"` attach key with css object and a value for true or false
+* class can be used even if :class bind is used
+
+
+### Dynamic Styling with CSS Classes - Using Objects
+* bind a object to the class
+* use a computed property
+*  `divClasses () { return { red: this.attach Red, blue: !this.attachRed } }` 
+
+### Dynamic Styling with CSS Classes - Using Names
+* bind a property key --> the value gets parsed
+* can be set through anything for example an input
+* you can use array syntax to mix setup
+* `:class="[color, {red: attachRed}]"`  
+
+### Setting Styles Dynamically (without CSS Classes)
+* `:style="{backgroundColor: color}"` key ist the style you want to bind too 
+* needs to be written in camelCase or with quotes
+* style object can be setup inside computed property
+* `myStyle: () { return { backgroundColor: this.color, width: this.width + 'px'} }`
+* `:style="myStyle"`
+
+### Styling Elements with the Array Syntax
+* `[myStyle, {height: width + 'px'}]` 
+* myStyle is a computed property which returns an object
