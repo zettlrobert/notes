@@ -351,10 +351,180 @@ const User = resolve => {
 * different builds which webpack created, all routes created with asynchronous syntax get there bundle and it is loaded when it is needed
 * if certain pieces should e grouped inside one sub-bundle, they can be grouped with the additional argument to the require.ensure function(after resolve) 
 
+# [VueX](https://vuex.vuejs.org/)
+Better way of state management for vue applications
+Why better state-management is needed
+* The more layers components have the more complicated it gets
+* Emit Bus could be used but still has its issues with a lot of emits and listens
+* changes are hard to track
+* vuex is similar to redux and flux
+* is written by vuejs team
 
-# VueX
+### Understanding "centralized state"
+* vuex uses a central store where the application state is stored
+* components still can have there own individual state
+* everything that is used in different parts of the application should be stored in the store
+
+### Using the Centralized State
+* typically all vuex related parts are stored in a folder named store
+* in store directory create store.js
+* helpers from the vuex package are needed
+* in store.js import vue and vuex from vue and vuex the package provides additional tools to handle state-management
+* tell vue to use vuex `Vue.use(Vuex)` 
+* we need a property called state (is an object)
+* in state every state element is stored
+* state needs to be exported
+* in main js the store needs to be imported
+* store needs to be registered in the root vue instance
+* store can be access by `this.$store.state.variableName` 
+
+### Why centralized State Alone Won't Fix It
+* if you have the same state variable in two components and manipulate it, the code needs to get duplicated
+* find solution for DRY principle
+
+### Understanding and using Getters
+* instead of directly accessing the state in the component where we need it we can create a getter
+* access the getter from different components
+* getters: is a reserved property in the root store component
+  ```
+    export const store = new Vuex.Store({
+      state: {
+        counter: 0
+      },
+      getters: {
+        doubleCounter: state => {
+          return state.counter * 2;
+        }
+      }
+    })
+  ```
+* in component inside a computed property `return this.$store.getters.doubleCounter`
+
+### Mapping Getters to Properties
+* implement a second getter inside the store
+* instead of using computed properties you can map the getters to properties with the helper function
+* helper function **mapGetters**  needs to be im ported from vuex
+```
+  computed: mapGetters([
+    'doubleCounter',
+    'stringCounter'
+  ])
+```
+* can be accessed like props
+* can't add own computed props that way --> solution is es6 object
+* spread operator allows to pull out properties and methods and crate separate key value pairs for them
+* add new dev-dependency babel-preset-state-2
+* in .babelrc add new preset: ["stage-2"]
+```
+  computed: {
+    ...mapGetters([
+      'doubleCounter',
+      'stringCounter'
+  } 
+  ])
+```
+
+### Understanding and using Mutations
+* if many components manipulate state it can get hard to track which component manipulate it at what time
+* add mutations to the store.js file.
+* each mutation gets state as input
+* `this.$store.commit('methodName')` state is passed automatically
+* mapMutations need to be imported like mapGetters
+* mutations allow us to change the state in one central place the store.js file!
+* never run a asynchronous function in a mutation
+
+### How Actions improve Mutations
+* mutations have to change the state immediately 
+* an action is a extra function which can run asynchronous task
+* the mutation gets only committed when the asynchronous task is done
+* actions are added like mutations in the store.js
+* inside actions methods are set up
+* actions take context as argument
+* context gives access to commit method has a lot of the store properties
+* destructuring can be used to pull out commit or other methods from the context object
+* its good practice to use actions to avoid using mutations to change state to always use them
+* use mapActions to map actions like getters or mutations
+
+### Mapping Actions to Methods
+* mapAction is used to get access to our actions
+* second argument mostly called payload can be passed on to mutations
+* if you need to pass more use an object to pass arguments
+
+### Vuex Pattern
+* We have central store, which gets adjusted by mutations
+* mutations have to be synchronous
+* we use actions to commit mutations
+* actions are dispatched by components
+* to use state we have getters
+* they allow to access state in different components
+* mapGetters is used to create computed properties
+* mutations are used to change the state, they get the state and data as input
+* they directly manipulate state
+* we need to use actions if we want to run async code
+
+### Two-Way-Binding (v-model) and Vuex
+* v-model value will not work because it can't change computed properties
+* v-model can't set the state
+* a method which updates state can be used
+```
+updateValue(event) {
+  this.$store.dispatch('updateValue', event.target.value)
+}
+```
+* to use v-model we need to change the computed property with a setter
+* the computed property needs to be turned into an object with a getter and setter
+* the setter executes this.$store.dispatch('updateValue', value)
+* setters in computed properties are rarely used but possible
+* use with caution!
+
+### Improving Folder Structure
+* how to split store.js into multiple files
+* **there are multiple ways to setup vuex file structure**
+* inside store there is a modules directory
+
+### Modularizing the State Management
+* split store.js into **modules** where each module contains all getters, actions and mutations for one module
+* in one module create an objects
+* export state, mutations, actions, getters from the new module file
+* inside store.js
+* modules need to be merged into store.js
+* we will always have a central store with a central state
+* in store.js we add a new property, called modules
+* module needs to be imported and added to the module prop
+
+### Using separate files
+* if you have a lot of different actions you can create other files, for example action.js (storefolder root)
+* in action.js file export constants with named exports
+```
+export const updateValue = ({commit}, payload) => {
+  commit('updateValue', payload);
+}
+```
+* import * as actions from the actions file // js creates an object with all exported values
+* use imported objects with the name inside of store.js
+* so all tasks are outsourced and more specialized things are in modules which could be split as well
+
+### Using Namespaces to Avoid Naming Problems
+* if you are using multiple modules you have to make sure to not use the same name (no key duplicates)
+* all things are merged into the same store.js and share the same namespace
+* **other pattern for big applications**
+* crate types.js
+`export const DOUBLE_COUNTER from 'counter/DOUBLE_COUNTER'`
+* import all types in one object `import * as types from '../types'`
+* dynamic property name with [types.DOUBLE_COUNTER] tells JS to assign a name on runtime
+* import * as types from '../store/types/'
+* in the results the getters need to be updated
+* counter: types.COUNTER
+* types file is used to manage global namespace
+* ensures that the same name is not used twice
+
+### Auto-Namespaceing with Vuex 2.1
+* **Modules can now be auto-namespaced by using the new namespace: true option**
+* getters, actions and mutations inside a namespaced module will automatically be prefixed with a nhamespaced inferred from the modules registration path.
+* [Autonamespacing](https://github.com/vuejs/vuex/releases/tag/v2.1.0)
 
 
 ### Useful Links
 * [getbootstrap.com](https://getbootstrap.com/docs/4.5/components/alerts/)
-* 
+* [Vuex Github Page](https://github.com/vuejs/vuex)
+* [Vuex Documenation](https://vuex.vuejs.org/en/)
