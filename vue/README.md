@@ -527,4 +527,69 @@ export const updateValue = ({commit}, payload) => {
 ### Useful Links
 * [getbootstrap.com](https://getbootstrap.com/docs/4.5/components/alerts/)
 * [Vuex Github Page](https://github.com/vuejs/vuex)
-* [Vuex Documenation](https://vuex.vuejs.org/en/)
+* **[Vuex Documenation](https://vuex.vuejs.org/en/)**
+
+
+# Form Validation
+
+### [vuetify](https://vuetifyjs.com/en/) of [vuelidate](https://vuelidate.js.org/)
+
+## Vuelidate
+lightweight model based validation package
+
+    npm install vuelidate
+
+
+````
+import Vue from 'vue'
+import Vuelidate from 'vuelidate'
+
+Vue.use(Vuelidate)
+
+```` 
+
+* required needs to be put onto the field (make conditonal with elvis expression)
+* import from vuelidate library all validators we need
+
+```` 
+import { require } from 'vuelidate/lib/validators';
+
+```` 
+
+* add validation section inside script
+  * which validators are used against what field in the form
+
+* method that checks if what is typed in is correct
+  * array of error messages
+  * this.$v --> value user entered into field
+
+Example username required (in computed)
+
+```` 
+usernameErrors() {
+  const errors = [];
+  !this.$v.username.required
+    && errors.push('Username is required')
+  return errors
+}
+
+```` 
+
+* error message is still displayed if you type into the field
+* @input and @blur has to be added
+* you need to tell vuelidate that testing is required on each input and on field leave
+  * @input="$v.username.$touch()" 
+  * @blur="$v.username.$touch()" 
+
+
+errorMethod check (in computed)
+```` 
+ emailErrors () {
+   const errors = [];
+   if (!this.$v.email$dirty) return errors;
+   !this.$v.email.email && errors.push('Must be valid e-mail');
+   !this.$v.email.required && errors.push('Must be valid e-mail');
+   return errors
+ }
+```` 
+* first thing that is checked is dirty --> no validation if the user did not have interaction with the field
