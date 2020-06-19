@@ -528,7 +528,7 @@ export const updateValue = ({commit}, payload) => {
 * [getbootstrap.com](https://getbootstrap.com/docs/4.5/components/alerts/)
 * [Vuex Github Page](https://github.com/vuejs/vuex)
 * **[Vuex Documenation](https://vuex.vuejs.org/en/)**
-
+* [Vuelidate Video](https://www.youtube.com/watch?v=5-Z-EmTnDyU)
 
 # Form Validation
 
@@ -548,7 +548,7 @@ Vue.use(Vuelidate)
 
 ```` 
 
-* required needs to be put onto the field (make conditonal with elvis expression)
+* required needs to be put onto the field (make conditional with elvis expression)
 * import from vuelidate library all validators we need
 
 ```` 
@@ -593,3 +593,200 @@ errorMethod check (in computed)
  }
 ```` 
 * first thing that is checked is dirty --> no validation if the user did not have interaction with the field
+
+* you can manually set the "dirty" state by calling $touch()
+
+### Contextifyed validators
+* related fields can be linked by contextified validators example, the built in *sameAs* validator
+
+### Data nesting
+* validators can be nested to match data as deep as necessary.
+* parent validator is *$invalid* when any of its children validators report $invalid state
+
+### $error vs $anyError
+* two ways of considering if an error should be displayed
+* $error or $anyError validation properties
+* low-level variant $dirty or $anyDirty
+
+### validation groups
+* you can create a validator that groups many otherwise unrelated fields together, a validation group
+
+````
+ validations: {
+    flatA: { required },
+    flatB: { required },
+    forGroup: {
+      nested: { required }
+    },
+    validationGroup: ['flatA', 'flatB', 'forGroup.nested']
+  }
+````
+
+### collections validation
+* array support with $each keyword
+
+````
+validations: {
+    people: {
+      required,
+      minLength: minLength(3),
+      $each: {
+        name: {
+          required,
+          minLength: minLength(2)
+        }
+      }
+    }
+  }
+````
+
+### asynchronous validation
+* validators can return a promise
+* promise success value is directly used for validation
+* failed promise fails validation, throws an error
+* components data has to be accessed synchronously for correct reactive behavior
+* it needs to be stored in a variable in validators scope if it needs to be used in asynchronous callback, for example .then
+* validator is evaluated on every data change, as it is essentially computed value
+* if a async call needs to be throttled to it on data change event not on the validator itself
+
+````
+  validations: {
+    username: {
+      required,
+      isUnique(value) {
+        // standalone validator ideally should not assume a field is required
+        if (value === '') return true
+
+        // simulate async call, fail for all logins with even length
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(typeof value === 'string' && value.length % 2 !== 0)
+          }, 350 + Math.random() * 300)
+        })
+      }
+    }
+  }
+
+  // async await syntax:
+  validations: {
+  async isUnique (value) {
+    if (value === '') return true
+    const response = await fetch(`/api/unique/${value}`)
+    return Boolean(await response.json())
+  }
+}
+````
+
+### delayed validation errors
+* with $touch state anything can be done
+* $touch and $reset needs to be called in the right moment.
+* Example: delayed error based on custom setTiemout logic
+
+````
+validations: {
+    name: {
+      required,
+      minLength: minLength(4),
+      maxLength: maxLength(15)
+    }
+  },
+  methods: {
+    delayTouch($v) {
+      $v.$reset()
+      if (touchMap.has($v)) {
+        clearTimeout(touchMap.get($v))
+      }
+      touchMap.set($v, setTimeout($v.$touch, 1000))
+    }
+  }
+````
+
+### Accessing validator parameters
+* information about validation can be accessed through $params or parent validator
+
+## dynamic
+
+### dynamic validation schema
+* validation schemas can be functions, which will make it dynamic and possibly dependant on your model's data.
+* recomputation happens automatically as if it was a computed value
+* $dirty sate is preserved as long as the key name wont change or disappear
+
+````
+validations() {
+    if (!this.hasDescription) {
+      return {
+        name: {
+          required
+        }
+      }
+    } else {
+      return {
+        name: {
+          required
+        },
+        description: {
+          required
+        }
+      }
+    }
+  }
+````
+
+### dynamic parameters
+* whole validation process is based on computed properties
+* validators name can be made dynamic
+* allow for dynamic behavior even when your data is changing in time
+
+````
+ data() {
+    return {
+      name: '',
+      minLength: 3,
+      valName: 'validatorName'
+    }
+  },
+  validations() {
+    return {
+      name: {
+        [this.valName]: minLength(this.minLength)
+      }
+    }
+  }
+````
+
+## API
+
+There are two structures present in vuelidate
+ * *validations* component option - the definition of your validation
+ * *$v* structure - object in your viewmodel that holds the validation state
+
+## $v values
+* $v represents the current state of the validation
+* defines a set of properties which hold the output of user defined validations, following the validations option structure
+* the presence of those special reserved keywords means that you cannot specify your own validators with that name
+
+## $v methods
+* methods to control the validation model.
+* accessible on every level of nesting
+* all methods are meant to be used on any event handler
+* use standard @input or @blur bindings
+
+|name|description|
+|---|---|
+| $touch| sets the $dirty flag of the model and all its children to true recursively|
+| $reset| sets the $dirty flag of the model and all its children to false recursively|
+| $flattenParams| returns an array of leaf params|
+
+## config keywords
+
+|name|type|description|
+|---|---|---|
+|$each| object| definition of nested validation applied to each prop of given model separately, perfect for validation arrays but can be used with any object or collection|
+|$trackBy|string || func | direct children of $each but is optional defines the accessor to object property's by which $each tracks its child models. necessary to correctly preserve $dirty flag on random insertions. if prop not present the key is used for tracking|
+
+### validators
+* comes with builtin validator
+* simple predicates - fucntins of data öinto boolean
+* [full list of validators](https://vuelidate.js.org/#sub-builtin-validators)
+
+### validator parameters
