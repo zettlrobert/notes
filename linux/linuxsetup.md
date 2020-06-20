@@ -298,7 +298,7 @@ Flutter relies on a full installation of Android STudio to supply its Android pl
 
 	$ sudo apt install defualt-jdk
 
-1. KVM/ For Emulator in accelerated mode
+1. KVM/ For Emulator in accelerated mode(https://help.ubuntu.com/community/KVM/Installation)
  1. check if kvm is supported, output must be 1 or more
 
 	$ egrep -c '(vmx|svm)' /proc/cpuinfo
