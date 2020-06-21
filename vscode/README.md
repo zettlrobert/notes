@@ -1,6 +1,13 @@
 # VSCODE
 
 ## Shortcuts
+|shrotcut|command|
+|---|---|
+|ctrl + alt + h|focus on file explorer|
+|ctrl + alt + n|new file(while in explorer)|
+|ctrl + shift + alt + n|new folder(while in explorer)|
+|ctrl + alt + m|open markdown preview to the side|
+|Toggle Activity Bar Visibility|alt + a|
 
 ## Important
 * Settigns Sync
@@ -17,7 +24,6 @@
 * Atom Keymap
 * Bracket Pair Colorizer
 * Live Server
-* Live SASS Compoiler
 * Live Share
 * Import Cost
 * Code Spell Checker
@@ -41,10 +47,9 @@
 ## languages
 ### Go
 * Go
-* vscode-go-syntax
+* Go Nightly 
 
 ### JS
-
 ### Dart
 * Dart
 
@@ -61,11 +66,11 @@
 * Auto Import
 * colorize
 * Pretty js/json
-* SASS
 * VS Code Counter
 
-
-
+## SASS
+* Sass
+* Live SASS Compoiler
 
 
 
