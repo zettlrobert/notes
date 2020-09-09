@@ -3,11 +3,12 @@
 ## Shortcuts
 |shrotcut|command|
 |---|---|
-|ctrl + alt + h|focus on file explorer|
-|ctrl + alt + n|new file(while in explorer)|
-|ctrl + shift + alt + n|new folder(while in explorer)|
+|alt + f|focus on file explorer|
+|alt + q|workbench.action.toggleSidebarVisibility|
+|alt + a|workbench.action.toggleActibityBarVisibility|
+|alt + n|new file(while in explorer)|
+|alt + m|new folder(while in explorer)|
 |ctrl + alt + m|open markdown preview to the side|
-|Toggle Activity Bar Visibility|alt + a|
 
 ## Important
 * Settigns Sync
