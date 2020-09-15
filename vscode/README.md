@@ -9,6 +9,8 @@
 |alt + n|new file(while in explorer)|
 |alt + m|new folder(while in explorer)|
 |ctrl + alt + m|open markdown preview to the side|
+|alt + super + l|View: Split Editor Left|
+|alt + super + h|View: Split Editor Right|
 
 ## Important
 * Settigns Sync
