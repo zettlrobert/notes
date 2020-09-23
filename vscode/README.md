@@ -11,6 +11,7 @@
 |ctrl + alt + m|open markdown preview to the side|
 |alt + super + l|View: Split Editor Left|
 |alt + super + h|View: Split Editor Right|
+|ctrl + 0 ctrl + 0 | View: Toggle Maximized Panel - fullscreen terminal |
 
 ## Important
 * Settigns Sync
