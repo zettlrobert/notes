@@ -77,9 +77,8 @@
 * Live SASS Compoiler
 
 
-
-
-
+## VSCODIUM
+product.json path: /usr/share/codium/resources/app
 
 
 
