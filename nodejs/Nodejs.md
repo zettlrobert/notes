@@ -50,4 +50,8 @@ req.on('data', chunk => {
 ```` 
 
 ### HTTP Methods & RESTful APIs
+### Routes
+prefix apis with /api/verssion/endpoint
+- /api/v1/something
 
+### Express Router
