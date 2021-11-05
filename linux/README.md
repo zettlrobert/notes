@@ -18,7 +18,7 @@ List available Interfaces
 
 |directory name| what it is for|
 |--|--|
-| bin/          |everyday user commands                                                                                                 |
+| bin/          |everyday user commands                                                                             \                 |
 | boot/         |files for the bootloader (grub/systemd)                                                                                |
 | dev/          |system devices (peripherals)                                                                                           |
 | etc/          |configuration files, always backup before changeing                                                                    |
@@ -56,9 +56,7 @@ List available Interfaces
 
 * print working directory
 
-        $ pwd
-
-* list content of directory
+        $ pwd  * list content of directory
   
         $ ls
 

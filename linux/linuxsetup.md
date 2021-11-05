@@ -1,6 +1,7 @@
 # Linux System Setup
 
 ## Gnome Extensions
+
 * Auto move windows
 * Caffeine
 * Clipboard indicator
@@ -21,7 +22,8 @@
 
 
 ## Installed Packages
-1. vim
+
+1. (n)vim
 1. zsh
 1. ohmyzsh
 1. fonts-powerline(from repository)
@@ -68,79 +70,91 @@
 1. deluge
 1. zoom
 1. Microsoft Teams
+1. peek
+
+## Languages
+
+1. node.js
+1. go
+1. python
+1. rust
+1. lua
 
 
 ## AppImages
+
 1. Bitwarden
 
-
 ## Flatpaks
+
 1. GIMP
 
-
 ## Configuration
-### [Install zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
-   
-	$ sudo apt install fonts-powerline 
 
-	$ sudo apt install zsh
+### [Install zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+
+$ sudo apt install fonts-powerline 
+
+$ sudo apt install zsh
 
 ### [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 
-	$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
- * ZSH_THEME="agnoster"
- * export UPDATE_ZSH_DAYS=3 
+* ZSH_THEME="agnoster"
+* export UPDATE_ZSH_DAYS=3 
 
 #### Plugins
+
 Navigate to ~/.oh-my-zsh/custom/plugins/
-    
-	$ git clone [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-	$ git clone [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
- 
- * plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
+$ git clone https://github.com/zsh-users/zsh-autosuggestions  ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
+$ git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+	* plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 ### [fonts-powerline](https://github.com/powerline/fonts.git)
 
-	$ git clone https://github.com/powerline/fonts.git --deph=1
+git clone https://github.com/powerline/fonts.git --deph=1
 
-	$ cd fonts && ./install.sh
+cd fonts && ./install.sh
 
 ## Kitty
 
-	$ sudo apt install kitty
+$ sudo apt install kitty
 
 Set kitty as default Terminal
- 
-	$ sudo update-alternaitves --config x-terminal-emulator
+
+$ sudo update-alternaitves --config x-terminal-emulator
 
 #### Settings CTRL + Shift + f2
+
 Opacity: opacity 0.8
 Next Window: CTRL+m
 Prevoius Window: CTRL+n
 
-
 #### zsh theme [powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
-* install fonts 
- * MesloLGS NF Regular.ttf
- * MesloLGS NF Bold.ttf
- * MesloLGS NF Italic.ttf
- * MesloLGS NF Bold Italic.ttf
+
+### install fonts
+
+* MesloLGS NF Regular.ttf
+* MesloLGS NF Bold.ttf
+* MesloLGS NF Italic.ttf
+* MesloLGS NF Bold Italic.ttf
 
 	$ fc-cache -fv
 
 * clone theme into oh-my-zsh custom/themes/
 
-	$ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+	git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 * set ZSH_THEME in .zshrc
 
-
-
 ## Sound
+
 Set 24bit sample-format and 48000 in /etc/pulse/daemon.conf
+
 * default-sample-format = s24le
 * default-sample-rate = 48000
 
@@ -150,27 +164,26 @@ Set 24bit sample-format and 48000 in /etc/pulse/daemon.conf
 
 #### Install Pulse Effects
 
-	$ sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
+sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
 
-	$ sudo apt install pulseeffects pulseaudio
+sudo apt install pulseeffects pulseaudio
 
 #### [Pulseeffect Presets](https://github.com/JackHack96/PulseEffects-Presets)
 
 Extract files to ~/.config/PulseEffects/output
 
-
 ## Theming
+
 Install User themes and browser extension to install gnome extensions
 
-
-#### [Material Black Theme](https://github.com/rtlewis88/rtl88-Themes)
+### [Material Black Theme](https://github.com/rtlewis88/rtl88-Themes)
 
 * Install dependency Murrine theme engine
 * Extract tar.xz to ~/.themes/ or /usr/share/themes
 * activate with GNOME Tweak Tool
 
+#### For Icons
 
-##### For Icons
 * Papirus
 * Suru++ and Numix icons and folers
 * candy-icons
@@ -179,67 +192,66 @@ Install User themes and browser extension to install gnome extensions
 * use Gnome Tweak Tools
 * on Ubuntu use papirus ppa and package to install
 
-
 ### [Razer Peripherals](https://openrazer.github.io/#download)
+
 * add openrazer/stable
 * [polychromatic](https://github.com/polychromatic/polychromatic)
 * add user to group plugdev
-	$ sudo gpasswd -a $USER plugdev
 
+	sudo gpasswd -a $USER plugdev
 
 ### Storage devices
+
 * create folders /media/mountfolder
 * edit /etc/fstab
 
-
 ### Insync
+
 Install with .deb
 Install nautilus package
 
-
 ### Snap
 
-	$ sudo apt install snapd
+sudo apt install snapd
 
 Update with snap refresh
 
+### OBS
 
-#### OBS
 ffmpeg required
 
-	$ sudo add-apt-repository ppa:obsproject/obs-studio
+$ sudo add-apt-repository ppa:obsproject/obs-studio
 
+## Development
 
+### Codium
 
-# Development
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add - 
 
-#### Codium
+echo 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list 
 
-	$ wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add - 
-
-	$ echo 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list 
-
-	$ sudo apt update && sudo apt install codium
-
+sudo apt update && sudo apt install codium
 
 ### NVM
-	$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
 insert path to .zshrc
 
 ### Node
 
-	$ nvm install node
+nvm install node
 
 #### Postman
+
 Install Flatpak from Pop Shop!
 
-	$ sudo snap install postman	
+sudo snap install postman	
 
-	
+
 Download and extract Postman, to create Desktop integration place a file:
 
-	~/.local/share/application/Postman.desktop
+~/.local/share/application/Postman.desktop
 
 Content:
 
@@ -252,32 +264,32 @@ Terminal=false
 Type=Application
 Categories=Development;
 
-
 #### MongoDB Compass
+
 Download and install .deb
 
-
 ### [Go](https://golang.org/doc/install)
+
 * download go
 * extract and move to /usr/local
 * add path to .profile or .zshrc
 * create space to save go projects(goworkspace) add to GOPATH
 
 	export GOPATH=/media/zerodev/go
+
 	export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-
-	
 ### [Flutter](https://flutter.dev/docs/get-started/install/linux)
 
-##### System Requirements for Fluter
+#### System Requirements for Fluter
+
 bash, curl, git 2.x, mkdir, rm, unzip, which, xz-utils, zip
 
 1. Get source code from [Flutter repo](https://github.com/flutter/flutter)
 1. clone it to the dir where you want flutter to live
 1. edit shell rc and add PATH, change path to where flutter lives
 
-	$ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
+export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
 
 1. must me absolute path
 1. echo $PATH
@@ -285,26 +297,27 @@ bash, curl, git 2.x, mkdir, rm, unzip, which, xz-utils, zip
 1. run flutter doctor
 
 #### Android setup
-Flutter relies on a full installation of Android STudio to supply its Android platform dependencies.
+
+Flutter relies on a full installation of Android Studio,
+to supply its Android platform dependencies.
 
 1. Download [Android Studio](https://developer.android.com/studio)
 1. install required libraries
 
-	$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 
 1. extract tar -xvf android...
 1. move to /usr/local/ for logged in user /opt/ for shared installation
 1. intall open-jdk
 
-	$ sudo apt install defualt-jdk
+$ sudo apt install defualt-jdk
 
-1. KVM/ For Emulator in accelerated mode(https://help.ubuntu.com/community/KVM/Installation)
- 1. check if kvm is supported, output must be 1 or more
+1. KVM/ For Emulator in accelerated mode [KVM](https://help.ubuntu.com/community/KVM/Installation)
+1. check if kvm is supported, output must be 1 or more
 
-	$ egrep -c '(vmx|svm)' /proc/cpuinfo
+$ egrep -c '(vmx|svm)' /proc/cpuinfo
 
-	$ sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
-
+$ sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 
 1. execute, navigate to android-studio&bin& and execute studio.sh
 1. create virtual device in Android Studio with Android ADK
@@ -314,7 +327,5 @@ Flutter relies on a full installation of Android STudio to supply its Android pl
 1. Set Path in .zshrc
 1. run flutter upgrade if there re errors
 
-
-
 ### [Docker](../docker/README-old.md)
-	 
+
