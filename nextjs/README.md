@@ -50,12 +50,12 @@ export default function App({ Component, pageProps }) {
 ````
 
 This `App` COmponent is the top-level compoennt whic hwill be common across all the different pages. It can keep state when navigating between pages.
-Restart dev Server if _app.tsx is added
+Restart dev Server if \_app.tsx is added
 
 Global Css files can be imported by importing them from `pages/_app.tsx` they can NOT be imported from anywhere else.
 
 - create top level styles directory with global.scss
-- add html, *, reset...
+- add html, \*, reset...
 
 
 ## Prerendering and Data Fetching
@@ -119,6 +119,10 @@ export async function getStaticProps() {
 `getStaticProps` tells Next.js "Hey, this page has some data dependencies -- so when you pre-render this apge at build time, make sure to resolve them first!
 
 NOTE: In development mode, `getStaticProps` runs on each request instead.
+
+## Next JS in Steps
+
+[NextJS](NextJS.md)
 
 
 
