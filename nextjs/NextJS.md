@@ -72,3 +72,29 @@ clients/[id]/ as folder name
 
 ### Adding a custom 404 Page
 - Add special file in `pages` 404.js - Loads Component when 404 Error arrises.
+
+## Page Pre-Rendering & Data Fetching
+By default, NextJS pre-renders all pages (~ server-side rendering: SSR)
+
+### Traditional React App Data Fetching
+A traditional React App has an empty HTML the page is rendered inside a wrapper tag, thats bad for SE-Crawlers.
+Data is fetched after the component was rendered to the screen.
+The inital response does not yet contain data.
+
+## How NextJS Prepares ^ Pre-renders Pages
+NextJS returns a pre-rendered page.
+- Good for SEO
+- Hydrate with React code once loaded. (Prerendered page gets returned react-code gets inserted) => Page is interactive.
+- Pre-rendering only affects the first page. Once the page is hydrated it is a standart SPA ONLY the inital page is prerendered.
+- There are two forms of Pre-Rendering.
+
+## Static Generation
+- Pre-generate a page (with data prepared on the server-side) during build time.
+- Pages are prepared ahead of time and can be chached by the server / CDN serving the app.
+- async function getSTaticProps(context) {...}
+  - in this function any code which would usually run on the server can be run.
+  - code written in this scope will not be included in the data which is sent to the client.
+
+
+
+
