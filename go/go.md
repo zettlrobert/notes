@@ -1,4 +1,5 @@
 # Installing Go
+
 - download go
 - extract the go archive to /usr/local - on first install you can not remove the directory as there is none.
 
@@ -20,11 +21,12 @@
         mkdir -p ~/development/go/src/github.com/zettlrobert
 
 # Code organization
-Go programs are organized into packages. 
+
+Go programs are organized into packages.
 
 Here's an example directory layout:
 
-````
+```
     /GOPATH
         src/
             github.com
@@ -44,11 +46,11 @@ Here's an example directory layout:
             linux_amd64/
                 foo/
                     bar.a          (installed package object)
-````
+```
 
 # Fist program
+
 Inside your GOPATH/src/user/ create your first project.
 Or initialize a go programm inside a folder with:
 
         go mod init github.com/user/programname
-

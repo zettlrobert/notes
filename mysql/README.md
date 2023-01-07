@@ -2,7 +2,6 @@
 
 1. sudo apt install mysql-server
 
-
 ## connecting to sql server
 
 Verify with
@@ -29,55 +28,55 @@ Adding and deleting users to mysql server and give permissions
 
 1. change to mysql database
 
-    $ USE mysql
+   $ USE mysql
 
 1. show all tables
 
-    $ SHOW TABLES; 
- 
+   $ SHOW TABLES;
+
 1. show structure of table
 
-    $ SHOW COLUMNS FROM DATABASENAME;
+   $ SHOW COLUMNS FROM DATABASENAME;
 
 1. add new user to table user(look at list with privileges)
 
-    $ INSERT INTO user (host, user, password, select_priv, insert_priv, update_priv) VALUES ('localhost', 'chris', PASSWORD('password'), 'Y', 'Y', 'Y')
+   $ INSERT INTO user (host, user, password, select_priv, insert_priv, update_priv) VALUES ('localhost', 'chris', PASSWORD('password'), 'Y', 'Y', 'Y')
 
 1. check if it worked
 
-    $ SELECT host, user, password FROM user WHERE user = 'uesrname';
- 
-1. refresh mysql   
-    
-    $ FLUSH PRIVILEGES;
+   $ SELECT host, user, password FROM user WHERE user = 'uesrname';
+
+1. refresh mysql
+
+   $ FLUSH PRIVILEGES;
 
 1. drop user
 
-    $ DROP USER 'username'@'localhost';
+   $ DROP USER 'username'@'localhost';
 
 1. connect with user
 
-    $ mysql -u username -p
+   $ mysql -u username -p
 
- # create database
+# create database
 
     $ CREATE DATABASE `my_database`;
 
 1. connect to database
 
-    $ USE my_database;
+   $ USE my_database;
 
 ## Creating and deleting Tables
 
 1. create table
 
-* connect to mysql server
+- connect to mysql server
 
-    $ mysql -u root -p
+  $ mysql -u root -p
 
-* create table
+- create table
 
-    $ CREATE TABLE table_name (column_id INT NOT NULL AUTO_INCREMENT, column_name VARCHAR(100) NOT NULL, establishment_data DATE, PRIMARY KEY (column_id));
+  $ CREATE TABLE table_name (column_id INT NOT NULL AUTO_INCREMENT, column_name VARCHAR(100) NOT NULL, establishment_data DATE, PRIMARY KEY (column_id));
 
 ## showing structure of tables
 
@@ -99,29 +98,14 @@ Adding and deleting users to mysql server and give permissions
 
 ## cloning tables
 
-* mysqldump
+- mysqldump
 
-    $ mysqldump -u root -p database_name table_name > ~/pathToFile
+  $ mysqldump -u root -p database_name table_name > ~/pathToFile
 
-* import 
+- import
 
-    $ mysql -u root -p database_name < ~/pathToDumpFile
+  $ mysql -u root -p database_name < ~/pathToDumpFile
 
-* mysqlimport data import program
+- mysqlimport data import program
 
-    $ mysqlimport -u root -p --local tmp_db ~/FileLocation
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+  $ mysqlimport -u root -p --local tmp_db ~/FileLocation

@@ -12,10 +12,8 @@
 
 3. Build Neovim select desired branch
 
-    make CMAKE_BUILD_TYPE=Release
+   make CMAKE_BUILD_TYPE=Release
 
 install prefix for desired location (path)
 
     make /usr/bin/nvmin=$HOME/local/nvim install
-
-

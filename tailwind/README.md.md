@@ -10,6 +10,8 @@ Highly customized stuff done faster.
 [Introduction](https://www.youtube.com/watch?v=pfaSUYaSgRo)
 
 - Install Langauge Server for Tailwind
+
 ## Basics
+
 - [Installation](https://tailwindcss.com/docs/installation)
 - Create configuration file `npx tailwindcss init`

@@ -1,6 +1,7 @@
 # Blockchain
 
 ### Underlying Technology
+
 Encryption + Distribution
 
 A Network of Computers colaborate to maintain a secure and shared Database
@@ -14,8 +15,6 @@ Transactions are Immutable, can not be deleted
 
 Each Hash is dependent on the Hash before --> each other Hash would change if one is tempered with.
 
-
 ## Permanent and Secure Database
+
 Secure Distributed Records are called Ledges
-
-

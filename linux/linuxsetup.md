@@ -2,24 +2,23 @@
 
 ## Gnome Extensions
 
-* Auto move windows
-* Caffeine
-* Clipboard indicator
-* Dash to dock
-* Easy docker containers
-* Hide activites button
-* KStatusNotifierItem/AppIndicator Support
-* Lock keys
-* Netspeed
-* Openweather
-* Removable drive menu
-* Ressource monitor
-* Sound input & output device chooser
-* User themes
-* Vpn indicator
-* Gtile
-* Workspace Indicator
-
+- Auto move windows
+- Caffeine
+- Clipboard indicator
+- Dash to dock
+- Easy docker containers
+- Hide activites button
+- KStatusNotifierItem/AppIndicator Support
+- Lock keys
+- Netspeed
+- Openweather
+- Removable drive menu
+- Ressource monitor
+- Sound input & output device chooser
+- User themes
+- Vpn indicator
+- Gtile
+- Workspace Indicator
 
 ## Installed Packages
 
@@ -80,7 +79,6 @@
 1. rust
 1. lua
 
-
 ## AppImages
 
 1. Bitwarden
@@ -93,7 +91,7 @@
 
 ### [Install zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
 
-$ sudo apt install fonts-powerline 
+$ sudo apt install fonts-powerline
 
 $ sudo apt install zsh
 
@@ -101,18 +99,18 @@ $ sudo apt install zsh
 
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-* ZSH_THEME="agnoster"
-* export UPDATE_ZSH_DAYS=3 
+- ZSH_THEME="agnoster"
+- export UPDATE_ZSH_DAYS=3
 
 #### Plugins
 
 Navigate to ~/.oh-my-zsh/custom/plugins/
 
-$ git clone https://github.com/zsh-users/zsh-autosuggestions  ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+$ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 $ git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-	* plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+    * plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 ### [fonts-powerline](https://github.com/powerline/fonts.git)
 
@@ -138,29 +136,29 @@ Prevoius Window: CTRL+n
 
 ### install fonts
 
-* MesloLGS NF Regular.ttf
-* MesloLGS NF Bold.ttf
-* MesloLGS NF Italic.ttf
-* MesloLGS NF Bold Italic.ttf
+- MesloLGS NF Regular.ttf
+- MesloLGS NF Bold.ttf
+- MesloLGS NF Italic.ttf
+- MesloLGS NF Bold Italic.ttf
 
-	$ fc-cache -fv
+  $ fc-cache -fv
 
-* clone theme into oh-my-zsh custom/themes/
+- clone theme into oh-my-zsh custom/themes/
 
-	git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+  git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
-* set ZSH_THEME in .zshrc
+- set ZSH_THEME in .zshrc
 
 ## Sound
 
 Set 24bit sample-format and 48000 in /etc/pulse/daemon.conf
 
-* default-sample-format = s24le
-* default-sample-rate = 48000
+- default-sample-format = s24le
+- default-sample-rate = 48000
 
-	$ pulseaudio -k
+  $ pulseaudio -k
 
-	$ pulseaudio
+  $ pulseaudio
 
 #### Install Pulse Effects
 
@@ -178,32 +176,32 @@ Install User themes and browser extension to install gnome extensions
 
 ### [Material Black Theme](https://github.com/rtlewis88/rtl88-Themes)
 
-* Install dependency Murrine theme engine
-* Extract tar.xz to ~/.themes/ or /usr/share/themes
-* activate with GNOME Tweak Tool
+- Install dependency Murrine theme engine
+- Extract tar.xz to ~/.themes/ or /usr/share/themes
+- activate with GNOME Tweak Tool
 
 #### For Icons
 
-* Papirus
-* Suru++ and Numix icons and folers
-* candy-icons
+- Papirus
+- Suru++ and Numix icons and folers
+- candy-icons
 
-* extract tar.xz into ~/.icons/ or /usr/share/icons/
-* use Gnome Tweak Tools
-* on Ubuntu use papirus ppa and package to install
+- extract tar.xz into ~/.icons/ or /usr/share/icons/
+- use Gnome Tweak Tools
+- on Ubuntu use papirus ppa and package to install
 
 ### [Razer Peripherals](https://openrazer.github.io/#download)
 
-* add openrazer/stable
-* [polychromatic](https://github.com/polychromatic/polychromatic)
-* add user to group plugdev
+- add openrazer/stable
+- [polychromatic](https://github.com/polychromatic/polychromatic)
+- add user to group plugdev
 
-	sudo gpasswd -a $USER plugdev
+  sudo gpasswd -a $USER plugdev
 
 ### Storage devices
 
-* create folders /media/mountfolder
-* edit /etc/fstab
+- create folders /media/mountfolder
+- edit /etc/fstab
 
 ### Insync
 
@@ -226,9 +224,9 @@ $ sudo add-apt-repository ppa:obsproject/obs-studio
 
 ### Codium
 
-wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add - 
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add -
 
-echo 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list 
+echo 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list
 
 sudo apt update && sudo apt install codium
 
@@ -246,8 +244,7 @@ nvm install node
 
 Install Flatpak from Pop Shop!
 
-sudo snap install postman	
-
+sudo snap install postman
 
 Download and extract Postman, to create Desktop integration place a file:
 
@@ -270,14 +267,14 @@ Download and install .deb
 
 ### [Go](https://golang.org/doc/install)
 
-* download go
-* extract and move to /usr/local
-* add path to .profile or .zshrc
-* create space to save go projects(goworkspace) add to GOPATH
+- download go
+- extract and move to /usr/local
+- add path to .profile or .zshrc
+- create space to save go projects(goworkspace) add to GOPATH
 
-	export GOPATH=/media/zerodev/go
+  export GOPATH=/media/zerodev/go
 
-	export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+  export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 ### [Flutter](https://flutter.dev/docs/get-started/install/linux)
 
@@ -328,4 +325,3 @@ $ sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-uti
 1. run flutter upgrade if there re errors
 
 ### [Docker](../docker/README-old.md)
-

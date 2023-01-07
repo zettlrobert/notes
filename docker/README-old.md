@@ -1,13 +1,15 @@
 # Docker
+
 Run Software in Containers that are seperate from local Machine.
 
 **App is the ame on every Machine**
 
 ### How it is Different from VM
+
 We have 1 Server, 1 OS and a Container for each App
 
-
 ## Installation from offical Repository
+
 apt install docker.io
 
 Remove old installations before proceeding
@@ -22,7 +24,6 @@ Install packages to allow apt to use a repository over HTTPS:
       curl \
       gnupg-agent \
       software-properties-common
-
 
 Add Docker GPG Key
 
@@ -43,7 +44,6 @@ Install latest Version of Docker Engine -Community and containered
 
       $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-
 Start and Automate Docker
 Docker service needs to be setup to run at startup.
 
@@ -63,19 +63,17 @@ Reevaluate user membership
 
       $ su -s ${USER}
 
-
 [Docker Hub](https://hub.docker.com/search?image_filter=official&type=image) --> Offical Images and Information how to run X
-
 
 ## Commands
 
 Version
-      $ docker version
+$ docker version
 
 Info about Dockers on System
-      $ docker info
+$ docker info
 
-Run Container(nginx) in interactive mode (it) -p(public) map port to 80:80 (second port is what is exposted from the container) 
+Run Container(nginx) in interactive mode (it) -p(public) map port to 80:80 (second port is what is exposted from the container)
 
       $ docker container run -it -p 80:80 nginx
 
@@ -107,7 +105,6 @@ Stop Container
 
       $ docker container stop name
 
-
 ## Container file manipulation
 
       $ docker container exec -it containername bash
@@ -116,25 +113,22 @@ Create bind Mount from Local Filesystem to Container
 
       $ docker contianer run -d -p 8080:80 -v $(pwd):/user/share/nginx/html --name nginx-website nginx
 
-
 ## Dockerfile
+
 create file named Dockerfile
 
 [Dockerfile](./docker/Dockerfile)
 
-    $ docker image build -t zettlrobert/nginx-website . 
-
+    $ docker image build -t zettlrobert/nginx-website .
 
 ## Push image to Dockerhub
 
     $ docker push imagename
 
-
-
 ### Example with Dockercompose
+
 Look at Dockerfile in this directory
 Dockerfile should be in root
 create docker-compose.yml file
 
     $ docker-compose up
-
